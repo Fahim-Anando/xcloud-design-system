@@ -60,7 +60,7 @@ export function PlaygroundNav(props: PlaygroundNavProps) {
       </div>
 
       {/* Nav */}
-      <nav className="flex-1 overflow-y-auto p-3 space-y-0.5">
+      <nav className="h-[calc(100vh-3.5rem)] overflow-y-auto p-3 space-y-0.5">
 
         {/* Color */}
         {isRouterMode ? (

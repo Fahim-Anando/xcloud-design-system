@@ -1,7 +1,7 @@
 "use client"
 
-import { useState, useCallback, useRef, useEffect } from "react"
-import { Upload, Search, Download, X, Check, Loader2 } from "lucide-react"
+import { useState, useCallback, useEffect } from "react"
+import { Search, Download, X, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { downloadSVG, downloadPNG } from "@/lib/icon-download"
 import { toast } from "sonner"
@@ -45,182 +45,9 @@ function SvgIcon({ url, size = 32, className }: { url: string; size?: number; cl
   )
 }
 
-// ── Upload Panel ───────────────────────────────────────────────────────────
+// ── Download Modal ─────────────────────────────────────────────────────────
 
-function UploadPanel({ onUploaded }: { onUploaded: () => void }) {
-  const inputRef = useRef<HTMLInputElement>(null)
-  const [dragging, setDragging] = useState(false)
-  const [file, setFile] = useState<File | null>(null)
-  const [previewUrl, setPreviewUrl] = useState<string | null>(null)
-  const [name, setName] = useState("")
-  const [category, setCategory] = useState("")
-  const [uploading, setUploading] = useState(false)
-  const [success, setSuccess] = useState(false)
-
-  const accept = useCallback((f: File) => {
-    if (!f.name.toLowerCase().endsWith(".svg") && f.type !== "image/svg+xml") {
-      toast.error("Only SVG files are supported")
-      return
-    }
-    if (f.size > 200 * 1024) {
-      toast.error("File too large — max 200 KB")
-      return
-    }
-    setFile(f)
-    setName(f.name.replace(/\.svg$/i, ""))
-    const url = URL.createObjectURL(f)
-    setPreviewUrl(url)
-    setSuccess(false)
-  }, [])
-
-  const onDrop = useCallback(
-    (e: React.DragEvent) => {
-      e.preventDefault()
-      setDragging(false)
-      const f = e.dataTransfer.files[0]
-      if (f) accept(f)
-    },
-    [accept]
-  )
-
-  const onFileChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const f = e.target.files?.[0]
-      if (f) accept(f)
-    },
-    [accept]
-  )
-
-  const reset = () => {
-    setFile(null)
-    setName("")
-    setCategory("")
-    if (previewUrl) URL.revokeObjectURL(previewUrl)
-    setPreviewUrl(null)
-    setSuccess(false)
-    if (inputRef.current) inputRef.current.value = ""
-  }
-
-  const upload = async () => {
-    if (!file) return
-    setUploading(true)
-    try {
-      const fd = new FormData()
-      fd.append("file", file)
-      fd.append("name", name.trim() || file.name.replace(/\.svg$/i, ""))
-      fd.append("category", category.trim() || "Uncategorized")
-      const res = await fetch("/api/icons", { method: "POST", body: fd })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error ?? "Upload failed")
-      setSuccess(true)
-      toast.success(`"${data.icon.name}" uploaded successfully`)
-      onUploaded()
-      setTimeout(reset, 1200)
-    } catch (err) {
-      toast.error(err instanceof Error ? err.message : "Upload failed")
-    } finally {
-      setUploading(false)
-    }
-  }
-
-  return (
-    <div className="rounded-lg border border-border bg-card p-6">
-      <h3 className="mb-4 text-sm font-semibold text-foreground">Upload Icon</h3>
-
-      <div className="flex gap-6">
-        {/* Drop zone */}
-        <div
-          onDragOver={(e) => { e.preventDefault(); setDragging(true) }}
-          onDragLeave={() => setDragging(false)}
-          onDrop={onDrop}
-          onClick={() => !file && inputRef.current?.click()}
-          className={cn(
-            "relative flex h-32 w-32 shrink-0 cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed transition-colors",
-            dragging
-              ? "border-primary bg-primary/5"
-              : file
-              ? "cursor-default border-border bg-muted/40"
-              : "border-border hover:border-primary/50 hover:bg-muted/30"
-          )}
-        >
-          {previewUrl ? (
-            <>
-              <SvgIcon url={previewUrl} size={48} />
-              <button
-                onClick={(e) => { e.stopPropagation(); reset() }}
-                className="absolute right-1.5 top-1.5 rounded-full bg-muted p-0.5 text-muted-foreground hover:text-foreground"
-              >
-                <X className="size-3" />
-              </button>
-            </>
-          ) : (
-            <>
-              <Upload className="mb-1.5 size-5 text-muted-foreground" />
-              <span className="text-center text-[10px] text-muted-foreground px-2 leading-snug">
-                Drop SVG here or click to browse
-              </span>
-            </>
-          )}
-          <input
-            ref={inputRef}
-            type="file"
-            accept=".svg,image/svg+xml"
-            className="hidden"
-            onChange={onFileChange}
-          />
-        </div>
-
-        {/* Fields */}
-        <div className="flex flex-1 flex-col gap-3">
-          <div>
-            <label className="mb-1 block text-[11px] font-medium text-muted-foreground">
-              Icon Name
-            </label>
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="e.g. arrow-right"
-              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-            />
-          </div>
-          <div>
-            <label className="mb-1 block text-[11px] font-medium text-muted-foreground">
-              Category
-            </label>
-            <input
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              placeholder="e.g. Navigation, Actions…"
-              className="w-full rounded-sm border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-            />
-          </div>
-          <button
-            onClick={upload}
-            disabled={!file || uploading || success}
-            className={cn(
-              "mt-auto flex h-9 items-center justify-center gap-2 rounded-sm px-4 text-sm font-medium transition-colors disabled:opacity-30",
-              success
-                ? "bg-success/20 text-success"
-                : "bg-primary text-white hover:bg-primary/90"
-            )}
-          >
-            {uploading ? (
-              <><Loader2 className="size-4 animate-spin" /> Uploading…</>
-            ) : success ? (
-              <><Check className="size-4" /> Uploaded</>
-            ) : (
-              <><Upload className="size-4" /> Upload Icon</>
-            )}
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-// ── Download Popover ───────────────────────────────────────────────────────
-
-function DownloadPopover({
+function DownloadModal({
   icon,
   onClose,
 }: {
@@ -230,6 +57,13 @@ function DownloadPopover({
   const [size, setSize] = useState<IconSize>(24)
   const [format, setFormat] = useState<IconFormat>("svg")
   const [downloading, setDownloading] = useState(false)
+
+  // Close on Escape key
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose() }
+    window.addEventListener("keydown", handler)
+    return () => window.removeEventListener("keydown", handler)
+  }, [onClose])
 
   const handleDownload = async () => {
     setDownloading(true)
@@ -248,71 +82,87 @@ function DownloadPopover({
   }
 
   return (
-    <div className="absolute inset-0 z-10 flex flex-col rounded-lg bg-card border border-border shadow-xl p-4">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-3">
-        <span className="text-xs font-semibold text-foreground truncate pr-2">{icon.name}</span>
-        <button onClick={onClose} className="shrink-0 text-muted-foreground hover:text-foreground">
-          <X className="size-3.5" />
-        </button>
-      </div>
-
-      {/* Preview */}
-      <div className="flex items-center justify-center rounded-md bg-muted/40 py-3 mb-3">
-        <SvgIcon url={icon.url} size={Math.min(size, 64)} />
-      </div>
-
-      {/* Size */}
-      <p className="mb-1 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/60">Size</p>
-      <div className="mb-3 flex flex-wrap gap-1">
-        {SIZES.map((s) => (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm"
+      onClick={(e) => { if (e.target === e.currentTarget) onClose() }}
+    >
+      <div className="w-80 rounded-xl border border-border bg-card shadow-2xl overflow-hidden">
+        {/* Header */}
+        <div className="flex items-center justify-between border-b border-border px-5 py-4">
+          <div>
+            <p className="text-sm font-semibold text-foreground">{icon.name}</p>
+            <p className="text-xs text-muted-foreground">{icon.category}</p>
+          </div>
           <button
-            key={s}
-            onClick={() => setSize(s)}
-            className={cn(
-              "rounded px-2 py-0.5 text-[10px] font-mono transition-colors",
-              size === s
-                ? "bg-primary text-white"
-                : "bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground"
-            )}
+            onClick={onClose}
+            className="flex h-7 w-7 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
           >
-            {s}
+            <X className="size-4" />
           </button>
-        ))}
-      </div>
+        </div>
 
-      {/* Format */}
-      <p className="mb-1 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/60">Format</p>
-      <div className="mb-4 flex gap-1">
-        {(["svg", "png"] as IconFormat[]).map((f) => (
+        <div className="p-5 space-y-5">
+          {/* Preview */}
+          <div className="flex items-center justify-center rounded-lg bg-muted/40 py-8">
+            <SvgIcon url={icon.url} size={Math.min(size, 64)} />
+          </div>
+
+          {/* Size */}
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Size</p>
+            <div className="grid grid-cols-6 gap-1.5">
+              {SIZES.map((s) => (
+                <button
+                  key={s}
+                  onClick={() => setSize(s)}
+                  className={cn(
+                    "rounded-md py-1.5 text-xs font-mono font-medium transition-colors",
+                    size === s
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground"
+                  )}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Format */}
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Format</p>
+            <div className="grid grid-cols-2 gap-1.5">
+              {(["svg", "png"] as IconFormat[]).map((f) => (
+                <button
+                  key={f}
+                  onClick={() => setFormat(f)}
+                  className={cn(
+                    "rounded-md py-2 text-xs font-mono font-semibold uppercase transition-colors",
+                    format === f
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground"
+                  )}
+                >
+                  .{f}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Download button */}
           <button
-            key={f}
-            onClick={() => setFormat(f)}
-            className={cn(
-              "rounded px-3 py-0.5 text-[10px] font-mono uppercase transition-colors",
-              format === f
-                ? "bg-primary text-white"
-                : "bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground"
-            )}
+            onClick={handleDownload}
+            disabled={downloading}
+            className="flex w-full h-10 items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-white transition-colors hover:bg-primary/90 disabled:opacity-40"
           >
-            {f}
+            {downloading ? (
+              <><Loader2 className="size-4 animate-spin" /> Downloading…</>
+            ) : (
+              <><Download className="size-4" /> Download {size}px .{format}</>
+            )}
           </button>
-        ))}
+        </div>
       </div>
-
-      {/* Download button */}
-      <button
-        onClick={handleDownload}
-        disabled={downloading}
-        className="flex h-8 items-center justify-center gap-2 rounded-sm bg-primary px-3 text-xs font-medium text-white transition-colors hover:bg-primary/90 disabled:opacity-30"
-      >
-        {downloading ? (
-          <Loader2 className="size-3.5 animate-spin" />
-        ) : (
-          <Download className="size-3.5" />
-        )}
-        Download {size}px .{format}
-      </button>
     </div>
   )
 }
@@ -337,15 +187,15 @@ function IconCard({ icon }: { icon: IconMeta }) {
       {/* Download trigger */}
       <button
         onClick={() => setShowDownload(true)}
-        className="flex h-6 w-full items-center justify-center gap-1 rounded-sm bg-muted text-[10px] text-muted-foreground transition-colors hover:bg-primary hover:text-white"
+        className="flex h-7 w-full items-center justify-center gap-1.5 rounded-sm bg-primary text-white text-[10px] font-medium transition-colors hover:bg-primary/90"
       >
-        <Download className="size-3" />
+        <Download className="size-3.5" />
         Download
       </button>
 
-      {/* Download popover overlay */}
+      {/* Download modal */}
       {showDownload && (
-        <DownloadPopover icon={icon} onClose={() => setShowDownload(false)} />
+        <DownloadModal icon={icon} onClose={() => setShowDownload(false)} />
       )}
     </div>
   )
@@ -383,9 +233,6 @@ export function IconLibrary() {
 
   return (
     <div className="space-y-8">
-      {/* Upload */}
-      <UploadPanel onUploaded={fetchIcons} />
-
       {/* Browse */}
       <div className="space-y-4">
         <div className="flex items-center gap-3">
