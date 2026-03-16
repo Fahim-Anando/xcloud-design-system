@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useCallback, useRef, useEffect } from "react"
-import { Upload, Search, Download, X, Check, Loader2, ImageOff } from "lucide-react"
+import { Upload, Search, Download, X, Check, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { downloadSVG, downloadPNG } from "@/lib/icon-download"
 import { toast } from "sonner"
@@ -20,6 +20,30 @@ interface IconMeta {
 const SIZES = [16, 24, 32, 48, 64, 128] as const
 type IconSize = (typeof SIZES)[number]
 type IconFormat = "svg" | "png"
+
+// ── SVG icon rendered via CSS mask (inherits --icon-primary color) ──────────
+
+function SvgIcon({ url, size = 32, className }: { url: string; size?: number; className?: string }) {
+  return (
+    <div
+      className={className}
+      style={{
+        width: size,
+        height: size,
+        backgroundColor: "var(--icon-primary)",
+        WebkitMaskImage: `url(${url})`,
+        maskImage: `url(${url})`,
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+        flexShrink: 0,
+      }}
+    />
+  )
+}
 
 // ── Upload Panel ───────────────────────────────────────────────────────────
 
@@ -121,12 +145,7 @@ function UploadPanel({ onUploaded }: { onUploaded: () => void }) {
         >
           {previewUrl ? (
             <>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={previewUrl}
-                alt="preview"
-                className="h-12 w-12 object-contain dark:invert"
-              />
+              <SvgIcon url={previewUrl} size={48} />
               <button
                 onClick={(e) => { e.stopPropagation(); reset() }}
                 className="absolute right-1.5 top-1.5 rounded-full bg-muted p-0.5 text-muted-foreground hover:text-foreground"
@@ -240,13 +259,7 @@ function DownloadPopover({
 
       {/* Preview */}
       <div className="flex items-center justify-center rounded-md bg-muted/40 py-3 mb-3">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={icon.url}
-          alt={icon.name}
-          style={{ width: Math.min(size, 64), height: Math.min(size, 64) }}
-          className="object-contain dark:invert"
-        />
+        <SvgIcon url={icon.url} size={Math.min(size, 64)} />
       </div>
 
       {/* Size */}
@@ -308,23 +321,12 @@ function DownloadPopover({
 
 function IconCard({ icon }: { icon: IconMeta }) {
   const [showDownload, setShowDownload] = useState(false)
-  const [imgError, setImgError] = useState(false)
 
   return (
     <div className="relative flex flex-col items-center gap-2 rounded-lg border border-border bg-card p-3 transition-shadow hover:shadow-md">
       {/* Icon preview */}
       <div className="flex h-12 w-12 items-center justify-center rounded-md bg-muted/40">
-        {imgError ? (
-          <ImageOff className="size-5 text-muted-foreground" />
-        ) : (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={icon.url}
-            alt={icon.name}
-            className="h-8 w-8 object-contain dark:invert"
-            onError={() => setImgError(true)}
-          />
-        )}
+        <SvgIcon url={icon.url} size={32} />
       </div>
 
       {/* Name */}
