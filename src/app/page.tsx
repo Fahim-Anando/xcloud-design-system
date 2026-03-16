@@ -27,6 +27,7 @@ import {
   BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { Button } from "@/components/ui/button"
+import { CircleIcon } from "@/components/icons/circle-icon"
 import { Calendar } from "@/components/ui/calendar"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -202,17 +203,98 @@ export default function Playground() {
 
         {/* ── TYPOGRAPHY ── */}
         <Section title="Typography">
-          <div className="space-y-2 rounded-lg border border-border p-5">
-            <p className="text-[36px] font-semibold leading-tight">text-heading-xxlarge · 36px / 600</p>
-            <p className="text-[24px] font-semibold">text-heading-xlarge · 24px / 600</p>
-            <p className="text-[22px] font-semibold">text-heading-large · 22px / 600</p>
-            <p className="text-[20px] font-medium">text-heading-medium · 20px / 500</p>
-            <p className="text-[18px] font-medium">text-heading-small · 18px / 500</p>
-            <p className="text-[16px] font-medium">text-heading-xsmall · 16px / 500</p>
-            <Separator />
-            <p className="text-base text-foreground">text-medium · 16px / 400 — Body paragraph copy for xCloud.</p>
-            <p className="text-sm text-muted-foreground">text-small · 14px / 400 — Last updated 5 minutes ago · Frankfurt datacenter</p>
-            <p className="text-xs text-muted-foreground">text-xsmall · 12px / 400 — Version 1.0.0</p>
+          <div className="space-y-6">
+
+            {/* Headings */}
+            <div>
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Headings</p>
+              <div className="rounded-lg border border-border overflow-hidden">
+                {/* Table header */}
+                <div className="grid grid-cols-[200px_56px_56px_1fr] gap-x-4 border-b border-border bg-muted/40 px-4 py-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
+                </div>
+                {[
+                  { token: "text-heading-xxlarge", size: "36px", weight: "600", cls: "text-[36px] font-semibold leading-tight" },
+                  { token: "text-heading-xlarge",  size: "24px", weight: "600", cls: "text-[24px] font-semibold leading-tight" },
+                  { token: "text-heading-large",   size: "22px", weight: "600", cls: "text-[22px] font-semibold leading-tight" },
+                  { token: "text-heading-medium",  size: "20px", weight: "600", cls: "text-[20px] font-semibold leading-snug" },
+                  { token: "text-heading-small",   size: "18px", weight: "500", cls: "text-[18px] font-medium leading-snug" },
+                  { token: "text-heading-xsmall",  size: "16px", weight: "500", cls: "text-base font-medium leading-snug" },
+                ].map((row, i, arr) => (
+                  <div
+                    key={row.token}
+                    className={`grid grid-cols-[200px_56px_56px_1fr] items-center gap-x-4 px-4 py-3 ${i < arr.length - 1 ? "border-b border-border" : ""}`}
+                  >
+                    <span className="font-mono text-[11px] text-muted-foreground">{row.token}</span>
+                    <span className="text-xs text-muted-foreground">{row.size}</span>
+                    <span className="text-xs text-muted-foreground">{row.weight}</span>
+                    <p className={row.cls}>The quick brown fox</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Body */}
+            <div>
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Body</p>
+              <div className="rounded-lg border border-border overflow-hidden">
+                <div className="grid grid-cols-[200px_56px_56px_1fr] gap-x-4 border-b border-border bg-muted/40 px-4 py-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
+                </div>
+                {[
+                  { token: "text-large",   size: "18px", weight: "500", cls: "text-[18px] font-medium" },
+                  { token: "text-medium",  size: "16px", weight: "400", cls: "text-base font-normal" },
+                  { token: "text-small",   size: "14px", weight: "400", cls: "text-sm font-normal" },
+                  { token: "text-xsmall",  size: "12px", weight: "400", cls: "text-xs font-normal" },
+                  { token: "text-xxsmall", size: "10px", weight: "400", cls: "text-[10px] font-normal" },
+                ].map((row, i, arr) => (
+                  <div
+                    key={row.token}
+                    className={`grid grid-cols-[200px_56px_56px_1fr] items-center gap-x-4 px-4 py-3 ${i < arr.length - 1 ? "border-b border-border" : ""}`}
+                  >
+                    <span className="font-mono text-[11px] text-muted-foreground">{row.token}</span>
+                    <span className="text-xs text-muted-foreground">{row.size}</span>
+                    <span className="text-xs text-muted-foreground">{row.weight}</span>
+                    <p className={row.cls}>Last updated 5 minutes ago · Frankfurt datacenter</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Paragraph */}
+            <div>
+              <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Paragraph</p>
+              <div className="rounded-lg border border-border overflow-hidden">
+                <div className="grid grid-cols-[200px_56px_56px_1fr] gap-x-4 border-b border-border bg-muted/40 px-4 py-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
+                  <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
+                </div>
+                {[
+                  { token: "text-paragraph-medium", size: "16px", weight: "400", cls: "text-base font-normal leading-relaxed" },
+                  { token: "text-paragraph-small",  size: "14px", weight: "400", cls: "text-sm font-normal leading-relaxed" },
+                  { token: "text-paragraph-xsmall", size: "12px", weight: "400", cls: "text-xs font-normal leading-relaxed" },
+                ].map((row, i, arr) => (
+                  <div
+                    key={row.token}
+                    className={`grid grid-cols-[200px_56px_56px_1fr] items-center gap-x-4 px-4 py-3 ${i < arr.length - 1 ? "border-b border-border" : ""}`}
+                  >
+                    <span className="font-mono text-[11px] text-muted-foreground">{row.token}</span>
+                    <span className="text-xs text-muted-foreground">{row.size}</span>
+                    <span className="text-xs text-muted-foreground">{row.weight}</span>
+                    <p className={`${row.cls} text-muted-foreground`}>xCloud helps teams deploy, manage, and scale WordPress sites with confidence. Built for developers.</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
           </div>
         </Section>
 
@@ -220,8 +302,8 @@ export default function Playground() {
 
         {/* ── BUTTONS ── */}
         <Section title="Button">
-          {/* Fixed-width columns: label | state | xs=96 | sm=112 | md=128 | lg=152 */}
-          <div className="grid grid-cols-[96px_56px_96px_112px_128px_152px] items-center gap-x-3 gap-y-2.5">
+          {/* Fixed-width columns: label | state | xs=70 | sm=88 | md=99 | lg=107 */}
+          <div className="grid grid-cols-[96px_56px_70px_88px_99px_107px] items-center gap-x-3 gap-y-2.5">
 
             {/* Header */}
             <span /><span />
@@ -232,96 +314,96 @@ export default function Playground() {
             {/* ── Primary ── */}
             <span className="text-xs font-semibold text-foreground row-span-3 self-center">Primary</span>
             <span className="text-[10px] text-muted-foreground">Icon L</span>
-            <Button variant="default" size="xs" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="default" size="sm" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="default" size="default" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="default" size="lg" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="default" size="xs" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="default" size="sm" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="default" size="default" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="default" size="lg" iconLeft={<CircleIcon />} className="w-full">Button</Button>
 
             <span className="text-[10px] text-muted-foreground">Icon R</span>
-            <Button variant="default" size="xs" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="default" size="sm" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="default" size="default" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="default" size="lg" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="default" size="xs" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="default" size="sm" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="default" size="default" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="default" size="lg" iconRight={<CircleIcon />} className="w-full">Button</Button>
 
             <span className="text-[10px] text-muted-foreground/50">Disabled</span>
-            <Button variant="default" size="xs" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="default" size="sm" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="default" size="default" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="default" size="lg" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="default" size="xs" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="default" size="sm" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="default" size="default" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="default" size="lg" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
 
             <span className="col-span-6 border-b border-border/50 my-0.5" />
 
             {/* ── Secondary ── */}
             <span className="text-xs font-semibold text-foreground row-span-3 self-center">Secondary</span>
             <span className="text-[10px] text-muted-foreground">Icon L</span>
-            <Button variant="secondary" size="xs" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="secondary" size="sm" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="secondary" size="default" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="secondary" size="lg" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="secondary" size="xs" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="secondary" size="sm" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="secondary" size="default" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="secondary" size="lg" iconLeft={<CircleIcon />} className="w-full">Button</Button>
 
             <span className="text-[10px] text-muted-foreground">Icon R</span>
-            <Button variant="secondary" size="xs" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="secondary" size="sm" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="secondary" size="default" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="secondary" size="lg" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="secondary" size="xs" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="secondary" size="sm" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="secondary" size="default" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="secondary" size="lg" iconRight={<CircleIcon />} className="w-full">Button</Button>
 
             <span className="text-[10px] text-muted-foreground/50">Disabled</span>
-            <Button variant="secondary" size="xs" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="secondary" size="sm" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="secondary" size="default" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="secondary" size="lg" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="secondary" size="xs" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="secondary" size="sm" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="secondary" size="default" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="secondary" size="lg" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
 
             <span className="col-span-6 border-b border-border/50 my-0.5" />
 
             {/* ── Outline ── */}
             <span className="text-xs font-semibold text-foreground row-span-3 self-center">Outline</span>
             <span className="text-[10px] text-muted-foreground">Icon L</span>
-            <Button variant="outline" size="xs" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="outline" size="sm" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="outline" size="default" iconLeft={<Plus />} className="w-full">Button</Button>
-            <Button variant="outline" size="lg" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="outline" size="xs" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="outline" size="sm" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="outline" size="default" iconLeft={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="outline" size="lg" iconLeft={<CircleIcon />} className="w-full">Button</Button>
 
             <span className="text-[10px] text-muted-foreground">Icon R</span>
-            <Button variant="outline" size="xs" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="outline" size="sm" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="outline" size="default" iconRight={<ArrowRight />} className="w-full">Button</Button>
-            <Button variant="outline" size="lg" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="outline" size="xs" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="outline" size="sm" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="outline" size="default" iconRight={<CircleIcon />} className="w-full">Button</Button>
+            <Button variant="outline" size="lg" iconRight={<CircleIcon />} className="w-full">Button</Button>
 
             <span className="text-[10px] text-muted-foreground/50">Disabled</span>
-            <Button variant="outline" size="xs" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="outline" size="sm" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="outline" size="default" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
-            <Button variant="outline" size="lg" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="outline" size="xs" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="outline" size="sm" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="outline" size="default" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
+            <Button variant="outline" size="lg" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
 
             <span className="col-span-6 border-b border-border/50 my-0.5" />
 
             {/* ── Icon Only — Primary & Outline only ── */}
             <span className="text-xs font-semibold text-foreground row-span-3 self-center">Icon</span>
             <span className="text-[10px] text-muted-foreground">Primary</span>
-            <Button variant="default" size="icon-xs"><Plus /></Button>
-            <Button variant="default" size="icon-sm"><Plus /></Button>
-            <Button variant="default" size="icon"><Plus /></Button>
-            <Button variant="default" size="icon-lg"><Plus /></Button>
+            <Button variant="default" size="icon-xs"><CircleIcon /></Button>
+            <Button variant="default" size="icon-sm"><CircleIcon /></Button>
+            <Button variant="default" size="icon"><CircleIcon /></Button>
+            <Button variant="default" size="icon-lg"><CircleIcon /></Button>
 
             <span className="text-[10px] text-muted-foreground">Outline</span>
-            <Button variant="outline" size="icon-xs"><Plus /></Button>
-            <Button variant="outline" size="icon-sm"><Plus /></Button>
-            <Button variant="outline" size="icon"><Plus /></Button>
-            <Button variant="outline" size="icon-lg"><Plus /></Button>
+            <Button variant="outline" size="icon-xs"><CircleIcon /></Button>
+            <Button variant="outline" size="icon-sm"><CircleIcon /></Button>
+            <Button variant="outline" size="icon"><CircleIcon /></Button>
+            <Button variant="outline" size="icon-lg"><CircleIcon /></Button>
 
             <span className="text-[10px] text-muted-foreground/50">Disabled</span>
-            <Button variant="default" size="icon-xs" disabled><Plus /></Button>
-            <Button variant="default" size="icon-sm" disabled><Plus /></Button>
-            <Button variant="default" size="icon" disabled><Plus /></Button>
-            <Button variant="default" size="icon-lg" disabled><Plus /></Button>
+            <Button variant="default" size="icon-xs" disabled><CircleIcon /></Button>
+            <Button variant="default" size="icon-sm" disabled><CircleIcon /></Button>
+            <Button variant="default" size="icon" disabled><CircleIcon /></Button>
+            <Button variant="default" size="icon-lg" disabled><CircleIcon /></Button>
           </div>
 
           {/* Other variants */}
           <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border/50 pt-4">
-            <Button variant="ghost" iconLeft={<Plus />}>Ghost</Button>
-            <Button variant="destructive" iconLeft={<Trash2 />}>Destructive</Button>
-            <Button variant="destructive-soft" iconLeft={<Trash2 />}>Destructive Soft</Button>
-            <Button variant="link" iconRight={<ArrowRight />}>Link Button</Button>
+            <Button variant="ghost" iconLeft={<CircleIcon />}>Ghost</Button>
+            <Button variant="destructive" iconLeft={<CircleIcon />}>Destructive</Button>
+            <Button variant="destructive-soft" iconLeft={<CircleIcon />}>Destructive Soft</Button>
+            <Button variant="link" iconRight={<CircleIcon />}>Link Button</Button>
             <Button loading={loading} variant="default" onClick={handleLoadingDemo}>
               {loading ? "Deploying…" : "Loading demo"}
             </Button>

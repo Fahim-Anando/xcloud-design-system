@@ -17,9 +17,9 @@ const buttonVariants = cva(
         brand:
           "bg-primary text-white hover:bg-primary-hover shadow-sm",
         outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
+          "border-border bg-background text-text-secondary [&_svg]:text-icon-secondary hover:bg-muted aria-expanded:bg-muted dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
+          "border-primary bg-transparent text-primary hover:bg-primary/5 aria-expanded:bg-primary/5",
         ghost:
           "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
         destructive:
@@ -29,20 +29,20 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        // Figma specs: xs 22h · sm 33h · md 36h · lg 40h (primary) / 44h (secondary/outline)
-        xs:      "h-[22px] gap-2 px-2 py-1 text-xs [&_svg:not([class*='size-'])]:size-3",
-        sm:      "h-[33px] gap-2 px-3 py-2 text-sm [&_svg:not([class*='size-'])]:size-3.5",
-        default: "h-9 gap-2 px-3 py-2 text-sm [&_svg:not([class*='size-'])]:size-4",
-        lg:      "h-10 gap-2 px-4 py-3 text-base [&_svg:not([class*='size-'])]:size-4",
+        // Figma specs: xs 22h·4px r · sm 33h·4px r · md 36h·4px r · lg 40h·8px r (primary) / 44h (secondary/outline)
+        xs:      "h-[22px] gap-1 px-2 py-1 text-xs [&_svg:not([class*='size-'])]:size-3",
+        sm:      "h-[33px] gap-1 px-3 py-2 text-sm [&_svg:not([class*='size-'])]:size-4",
+        default: "h-9 gap-2 px-3 py-2 text-sm [&_svg:not([class*='size-'])]:size-5",
+        lg:      "h-10 gap-2 px-4 py-3 text-base [&_svg:not([class*='size-'])]:size-5",
         xl:      "h-11 gap-2 px-5 py-3 text-base [&_svg:not([class*='size-'])]:size-5",
-        icon:         "size-9 [&_svg:not([class*='size-'])]:size-4",
+        icon:         "size-9 [&_svg:not([class*='size-'])]:size-5",
         "icon-xs":    "size-[22px] [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm":    "size-[33px] [&_svg:not([class*='size-'])]:size-3.5",
+        "icon-sm":    "size-[33px] [&_svg:not([class*='size-'])]:size-4",
         "icon-lg":    "size-10 [&_svg:not([class*='size-'])]:size-5",
       },
     },
     compoundVariants: [
-      // Secondary / outline at lg → h-11 (44px), radius stays 4px (rounded-sm from base)
+      // Secondary / outline at lg → h-11 (44px), radius 8px (rounded) from lg size class
       { variant: ["secondary", "outline"], size: "lg", className: "h-11" },
     ],
     defaultVariants: {
