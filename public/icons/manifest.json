@@ -1,10 +1,1394 @@
 [
   {
-    "id": "circle-plus",
-    "name": "circle-plus",
-    "category": "Actions",
-    "filename": "circle-plus.svg",
-    "url": "/icons/circle-plus.svg",
-    "uploadedAt": "2026-03-16T08:00:41.560Z"
+    "id": "circle",
+    "name": "circle",
+    "category": "xCloud",
+    "filename": "circle.svg",
+    "url": "/icons/circle.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "pin-45",
+    "name": "pin-45",
+    "category": "xCloud",
+    "filename": "pin-45.svg",
+    "url": "/icons/pin-45.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "pin",
+    "name": "pin",
+    "category": "xCloud",
+    "filename": "pin.svg",
+    "url": "/icons/pin.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "https",
+    "name": "https",
+    "category": "xCloud",
+    "filename": "https.svg",
+    "url": "/icons/https.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "arrow-right",
+    "name": "arrow-right",
+    "category": "xCloud",
+    "filename": "arrow-right.svg",
+    "url": "/icons/arrow-right.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "folder-plus",
+    "name": "folder-plus",
+    "category": "xCloud",
+    "filename": "folder-plus.svg",
+    "url": "/icons/folder-plus.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "ad",
+    "name": "ad",
+    "category": "xCloud",
+    "filename": "ad.svg",
+    "url": "/icons/ad.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "ai-bot-blocker",
+    "name": "ai-bot-blocker",
+    "category": "xCloud",
+    "filename": "ai-bot-blocker.svg",
+    "url": "/icons/ai-bot-blocker.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "access-data",
+    "name": "access-data",
+    "category": "xCloud",
+    "filename": "access-data.svg",
+    "url": "/icons/access-data.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "access-data-1",
+    "name": "access-data-1",
+    "category": "xCloud",
+    "filename": "access-data-1.svg",
+    "url": "/icons/access-data-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "access",
+    "name": "access",
+    "category": "xCloud",
+    "filename": "access.svg",
+    "url": "/icons/access.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "active-backup",
+    "name": "active-backup",
+    "category": "xCloud",
+    "filename": "active-backup.svg",
+    "url": "/icons/active-backup.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "activity",
+    "name": "activity",
+    "category": "xCloud",
+    "filename": "activity.svg",
+    "url": "/icons/activity.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "add-ons",
+    "name": "add-ons",
+    "category": "xCloud",
+    "filename": "add-ons.svg",
+    "url": "/icons/add-ons.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "addons",
+    "name": "addons",
+    "category": "xCloud",
+    "filename": "addons.svg",
+    "url": "/icons/addons.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "admin-user",
+    "name": "admin-user",
+    "category": "xCloud",
+    "filename": "admin-user.svg",
+    "url": "/icons/admin-user.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "affiliate",
+    "name": "affiliate",
+    "category": "xCloud",
+    "filename": "affiliate.svg",
+    "url": "/icons/affiliate.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "all-product",
+    "name": "all-product",
+    "category": "xCloud",
+    "filename": "all-product.svg",
+    "url": "/icons/all-product.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "any-provider-old",
+    "name": "any-provider-old",
+    "category": "xCloud",
+    "filename": "any-provider-old.svg",
+    "url": "/icons/any-provider-old.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "aroww-rightt",
+    "name": "aroww-rightt",
+    "category": "xCloud",
+    "filename": "aroww-rightt.svg",
+    "url": "/icons/aroww-rightt.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "authentication",
+    "name": "authentication",
+    "category": "xCloud",
+    "filename": "authentication.svg",
+    "url": "/icons/authentication.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "backup-now",
+    "name": "backup-now",
+    "category": "xCloud",
+    "filename": "backup-now.svg",
+    "url": "/icons/backup-now.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "backup-1",
+    "name": "backup-1",
+    "category": "xCloud",
+    "filename": "backup-1.svg",
+    "url": "/icons/backup-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "backup-2",
+    "name": "backup-2",
+    "category": "xCloud",
+    "filename": "backup-2.svg",
+    "url": "/icons/backup-2.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "backup",
+    "name": "backup",
+    "category": "xCloud",
+    "filename": "backup.svg",
+    "url": "/icons/backup.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "backup-1-1",
+    "name": "backup-1-1",
+    "category": "xCloud",
+    "filename": "backup-1-1.svg",
+    "url": "/icons/backup-1-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "bill",
+    "name": "bill",
+    "category": "xCloud",
+    "filename": "bill.svg",
+    "url": "/icons/bill.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "billing",
+    "name": "billing",
+    "category": "xCloud",
+    "filename": "billing.svg",
+    "url": "/icons/billing.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "blueprint",
+    "name": "blueprint",
+    "category": "xCloud",
+    "filename": "blueprint.svg",
+    "url": "/icons/blueprint.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "briefcase",
+    "name": "briefcase",
+    "category": "xCloud",
+    "filename": "briefcase.svg",
+    "url": "/icons/briefcase.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "bucket",
+    "name": "bucket",
+    "category": "xCloud",
+    "filename": "bucket.svg",
+    "url": "/icons/bucket.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "bug",
+    "name": "bug",
+    "category": "xCloud",
+    "filename": "bug.svg",
+    "url": "/icons/bug.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "buillding",
+    "name": "buillding",
+    "category": "xCloud",
+    "filename": "buillding.svg",
+    "url": "/icons/buillding.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "caching",
+    "name": "caching",
+    "category": "xCloud",
+    "filename": "caching.svg",
+    "url": "/icons/caching.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "check-mark-1",
+    "name": "check-mark-1",
+    "category": "xCloud",
+    "filename": "check-mark-1.svg",
+    "url": "/icons/check-mark-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "check-mark",
+    "name": "check-mark",
+    "category": "xCloud",
+    "filename": "check-mark.svg",
+    "url": "/icons/check-mark.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "chevron-down",
+    "name": "chevron-down",
+    "category": "xCloud",
+    "filename": "chevron-down.svg",
+    "url": "/icons/chevron-down.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "chevron-left",
+    "name": "chevron-left",
+    "category": "xCloud",
+    "filename": "chevron-left.svg",
+    "url": "/icons/chevron-left.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "chevron-right",
+    "name": "chevron-right",
+    "category": "xCloud",
+    "filename": "chevron-right.svg",
+    "url": "/icons/chevron-right.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "chevron-up",
+    "name": "chevron-up",
+    "category": "xCloud",
+    "filename": "chevron-up.svg",
+    "url": "/icons/chevron-up.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "close",
+    "name": "close",
+    "category": "xCloud",
+    "filename": "close.svg",
+    "url": "/icons/close.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "cloud-backup",
+    "name": "cloud-backup",
+    "category": "xCloud",
+    "filename": "cloud-backup.svg",
+    "url": "/icons/cloud-backup.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "command",
+    "name": "command",
+    "category": "xCloud",
+    "filename": "command.svg",
+    "url": "/icons/command.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "copy",
+    "name": "copy",
+    "category": "xCloud",
+    "filename": "copy.svg",
+    "url": "/icons/copy.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "custom-php",
+    "name": "custom-php",
+    "category": "xCloud",
+    "filename": "custom-php.svg",
+    "url": "/icons/custom-php.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "dash",
+    "name": "dash",
+    "category": "xCloud",
+    "filename": "dash.svg",
+    "url": "/icons/dash.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "dashboard",
+    "name": "dashboard",
+    "category": "xCloud",
+    "filename": "dashboard.svg",
+    "url": "/icons/dashboard.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "database",
+    "name": "database",
+    "category": "xCloud",
+    "filename": "database.svg",
+    "url": "/icons/database.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "default-view",
+    "name": "default-view",
+    "category": "xCloud",
+    "filename": "default-view.svg",
+    "url": "/icons/default-view.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "delete",
+    "name": "delete",
+    "category": "xCloud",
+    "filename": "delete.svg",
+    "url": "/icons/delete.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "disable-site",
+    "name": "disable-site",
+    "category": "xCloud",
+    "filename": "disable-site.svg",
+    "url": "/icons/disable-site.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "discount",
+    "name": "discount",
+    "category": "xCloud",
+    "filename": "discount.svg",
+    "url": "/icons/discount.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "doc",
+    "name": "doc",
+    "category": "xCloud",
+    "filename": "doc.svg",
+    "url": "/icons/doc.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "docker-nginx-combined",
+    "name": "docker-nginx-combined",
+    "category": "xCloud",
+    "filename": "docker-nginx-combined.svg",
+    "url": "/icons/docker-nginx-combined.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "document",
+    "name": "document",
+    "category": "xCloud",
+    "filename": "document.svg",
+    "url": "/icons/document.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "documentation",
+    "name": "documentation",
+    "category": "xCloud",
+    "filename": "documentation.svg",
+    "url": "/icons/documentation.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "domain",
+    "name": "domain",
+    "category": "xCloud",
+    "filename": "domain.svg",
+    "url": "/icons/domain.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "drag-drop",
+    "name": "drag-drop",
+    "category": "xCloud",
+    "filename": "drag-drop.svg",
+    "url": "/icons/drag-drop.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "edit",
+    "name": "edit",
+    "category": "xCloud",
+    "filename": "edit.svg",
+    "url": "/icons/edit.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "elephant-php",
+    "name": "elephant-php",
+    "category": "xCloud",
+    "filename": "elephant-php.svg",
+    "url": "/icons/elephant-php.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "email-configuration",
+    "name": "email-configuration",
+    "category": "xCloud",
+    "filename": "email-configuration.svg",
+    "url": "/icons/email-configuration.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "event-1",
+    "name": "event-1",
+    "category": "xCloud",
+    "filename": "event-1.svg",
+    "url": "/icons/event-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "event",
+    "name": "event",
+    "category": "xCloud",
+    "filename": "event.svg",
+    "url": "/icons/event.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "eye-open",
+    "name": "eye-open",
+    "category": "xCloud",
+    "filename": "eye-open.svg",
+    "url": "/icons/eye-open.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "fail",
+    "name": "fail",
+    "category": "xCloud",
+    "filename": "fail.svg",
+    "url": "/icons/fail.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "filter",
+    "name": "filter",
+    "category": "xCloud",
+    "filename": "filter.svg",
+    "url": "/icons/filter.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "folder",
+    "name": "folder",
+    "category": "xCloud",
+    "filename": "folder.svg",
+    "url": "/icons/folder.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "graph",
+    "name": "graph",
+    "category": "xCloud",
+    "filename": "graph.svg",
+    "url": "/icons/graph.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "grid-view",
+    "name": "grid-view",
+    "category": "xCloud",
+    "filename": "grid-view.svg",
+    "url": "/icons/grid-view.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "growth",
+    "name": "growth",
+    "category": "xCloud",
+    "filename": "growth.svg",
+    "url": "/icons/growth.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "help",
+    "name": "help",
+    "category": "xCloud",
+    "filename": "help.svg",
+    "url": "/icons/help.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "history",
+    "name": "history",
+    "category": "xCloud",
+    "filename": "history.svg",
+    "url": "/icons/history.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "icon-refresh",
+    "name": "icon-refresh",
+    "category": "xCloud",
+    "filename": "icon-refresh.svg",
+    "url": "/icons/icon-refresh.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "info",
+    "name": "info",
+    "category": "xCloud",
+    "filename": "info.svg",
+    "url": "/icons/info.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "laravel",
+    "name": "laravel",
+    "category": "xCloud",
+    "filename": "laravel.svg",
+    "url": "/icons/laravel.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "list-view-1",
+    "name": "list-view-1",
+    "category": "xCloud",
+    "filename": "list-view-1.svg",
+    "url": "/icons/list-view-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "list-view",
+    "name": "list-view",
+    "category": "xCloud",
+    "filename": "list-view.svg",
+    "url": "/icons/list-view.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "local-backup",
+    "name": "local-backup",
+    "category": "xCloud",
+    "filename": "local-backup.svg",
+    "url": "/icons/local-backup.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "lock",
+    "name": "lock",
+    "category": "xCloud",
+    "filename": "lock.svg",
+    "url": "/icons/lock.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "log-in",
+    "name": "log-in",
+    "category": "xCloud",
+    "filename": "log-in.svg",
+    "url": "/icons/log-in.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "magic",
+    "name": "magic",
+    "category": "xCloud",
+    "filename": "magic.svg",
+    "url": "/icons/magic.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "mail",
+    "name": "mail",
+    "category": "xCloud",
+    "filename": "mail.svg",
+    "url": "/icons/mail.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "metadata",
+    "name": "metadata",
+    "category": "xCloud",
+    "filename": "metadata.svg",
+    "url": "/icons/metadata.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "mobile-device",
+    "name": "mobile-device",
+    "category": "xCloud",
+    "filename": "mobile-device.svg",
+    "url": "/icons/mobile-device.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "money",
+    "name": "money",
+    "category": "xCloud",
+    "filename": "money.svg",
+    "url": "/icons/money.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "monitor",
+    "name": "monitor",
+    "category": "xCloud",
+    "filename": "monitor.svg",
+    "url": "/icons/monitor.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "monitoring-1",
+    "name": "monitoring-1",
+    "category": "xCloud",
+    "filename": "monitoring-1.svg",
+    "url": "/icons/monitoring-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "monitoring",
+    "name": "monitoring",
+    "category": "xCloud",
+    "filename": "monitoring.svg",
+    "url": "/icons/monitoring.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "monitoring-refresh",
+    "name": "monitoring-refresh",
+    "category": "xCloud",
+    "filename": "monitoring-refresh.svg",
+    "url": "/icons/monitoring-refresh.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "mysql",
+    "name": "mysql",
+    "category": "xCloud",
+    "filename": "mysql.svg",
+    "url": "/icons/mysql.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "new-tab",
+    "name": "new-tab",
+    "category": "xCloud",
+    "filename": "new-tab.svg",
+    "url": "/icons/new-tab.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "note",
+    "name": "note",
+    "category": "xCloud",
+    "filename": "note.svg",
+    "url": "/icons/note.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "notification",
+    "name": "notification",
+    "category": "xCloud",
+    "filename": "notification.svg",
+    "url": "/icons/notification.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "openlitespeed-icon-3",
+    "name": "openlitespeed-icon-3",
+    "category": "xCloud",
+    "filename": "openlitespeed-icon-3.svg",
+    "url": "/icons/openlitespeed-icon-3.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "output",
+    "name": "output",
+    "category": "xCloud",
+    "filename": "output.svg",
+    "url": "/icons/output.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "php",
+    "name": "php",
+    "category": "xCloud",
+    "filename": "php.svg",
+    "url": "/icons/php.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "pause",
+    "name": "pause",
+    "category": "xCloud",
+    "filename": "pause.svg",
+    "url": "/icons/pause.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "perform",
+    "name": "perform",
+    "category": "xCloud",
+    "filename": "perform.svg",
+    "url": "/icons/perform.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "pin-1",
+    "name": "pin-1",
+    "category": "xCloud",
+    "filename": "pin-1.svg",
+    "url": "/icons/pin-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "play",
+    "name": "play",
+    "category": "xCloud",
+    "filename": "play.svg",
+    "url": "/icons/play.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "plus",
+    "name": "plus",
+    "category": "xCloud",
+    "filename": "plus.svg",
+    "url": "/icons/plus.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "power",
+    "name": "power",
+    "category": "xCloud",
+    "filename": "power.svg",
+    "url": "/icons/power.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "purge-cache",
+    "name": "purge-cache",
+    "category": "xCloud",
+    "filename": "purge-cache.svg",
+    "url": "/icons/purge-cache.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "push-content",
+    "name": "push-content",
+    "category": "xCloud",
+    "filename": "push-content.svg",
+    "url": "/icons/push-content.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "puzzle",
+    "name": "puzzle",
+    "category": "xCloud",
+    "filename": "puzzle.svg",
+    "url": "/icons/puzzle.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "redirect",
+    "name": "redirect",
+    "category": "xCloud",
+    "filename": "redirect.svg",
+    "url": "/icons/redirect.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "refresh",
+    "name": "refresh",
+    "category": "xCloud",
+    "filename": "refresh.svg",
+    "url": "/icons/refresh.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "remote-backup",
+    "name": "remote-backup",
+    "category": "xCloud",
+    "filename": "remote-backup.svg",
+    "url": "/icons/remote-backup.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "rescue-site",
+    "name": "rescue-site",
+    "category": "xCloud",
+    "filename": "rescue-site.svg",
+    "url": "/icons/rescue-site.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "resources",
+    "name": "resources",
+    "category": "xCloud",
+    "filename": "resources.svg",
+    "url": "/icons/resources.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "restart",
+    "name": "restart",
+    "category": "xCloud",
+    "filename": "restart.svg",
+    "url": "/icons/restart.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "right-icon",
+    "name": "right-icon",
+    "category": "xCloud",
+    "filename": "right-icon.svg",
+    "url": "/icons/right-icon.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "seo",
+    "name": "seo",
+    "category": "xCloud",
+    "filename": "seo.svg",
+    "url": "/icons/seo.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "ssl",
+    "name": "ssl",
+    "category": "xCloud",
+    "filename": "ssl.svg",
+    "url": "/icons/ssl.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "schedule",
+    "name": "schedule",
+    "category": "xCloud",
+    "filename": "schedule.svg",
+    "url": "/icons/schedule.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "search-1",
+    "name": "search-1",
+    "category": "xCloud",
+    "filename": "search-1.svg",
+    "url": "/icons/search-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "search",
+    "name": "search",
+    "category": "xCloud",
+    "filename": "search.svg",
+    "url": "/icons/search.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "secure",
+    "name": "secure",
+    "category": "xCloud",
+    "filename": "secure.svg",
+    "url": "/icons/secure.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "security-1",
+    "name": "security-1",
+    "category": "xCloud",
+    "filename": "security-1.svg",
+    "url": "/icons/security-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "security",
+    "name": "security",
+    "category": "xCloud",
+    "filename": "security.svg",
+    "url": "/icons/security.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "server",
+    "name": "server",
+    "category": "xCloud",
+    "filename": "server.svg",
+    "url": "/icons/server.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "server-managment",
+    "name": "server-managment",
+    "category": "xCloud",
+    "filename": "server-managment.svg",
+    "url": "/icons/server-managment.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "set-as-default",
+    "name": "set-as-default",
+    "category": "xCloud",
+    "filename": "set-as-default.svg",
+    "url": "/icons/set-as-default.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "settings",
+    "name": "settings",
+    "category": "xCloud",
+    "filename": "settings.svg",
+    "url": "/icons/settings.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site-backup",
+    "name": "site-backup",
+    "category": "xCloud",
+    "filename": "site-backup.svg",
+    "url": "/icons/site-backup.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site-monitoring",
+    "name": "site-monitoring",
+    "category": "xCloud",
+    "filename": "site-monitoring.svg",
+    "url": "/icons/site-monitoring.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site-overview",
+    "name": "site-overview",
+    "category": "xCloud",
+    "filename": "site-overview.svg",
+    "url": "/icons/site-overview.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site-settings",
+    "name": "site-settings",
+    "category": "xCloud",
+    "filename": "site-settings.svg",
+    "url": "/icons/site-settings.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site",
+    "name": "site",
+    "category": "xCloud",
+    "filename": "site.svg",
+    "url": "/icons/site.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site-insights",
+    "name": "site-insights",
+    "category": "xCloud",
+    "filename": "site-insights.svg",
+    "url": "/icons/site-insights.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site-list",
+    "name": "site-list",
+    "category": "xCloud",
+    "filename": "site-list.svg",
+    "url": "/icons/site-list.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site-logs",
+    "name": "site-logs",
+    "category": "xCloud",
+    "filename": "site-logs.svg",
+    "url": "/icons/site-logs.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "site-settings-1",
+    "name": "site-settings-1",
+    "category": "xCloud",
+    "filename": "site-settings-1.svg",
+    "url": "/icons/site-settings-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "staging",
+    "name": "staging",
+    "category": "xCloud",
+    "filename": "staging.svg",
+    "url": "/icons/staging.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "storage",
+    "name": "storage",
+    "category": "xCloud",
+    "filename": "storage.svg",
+    "url": "/icons/storage.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "subscription-icon",
+    "name": "subscription-icon",
+    "category": "xCloud",
+    "filename": "subscription-icon.svg",
+    "url": "/icons/subscription-icon.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "support",
+    "name": "support",
+    "category": "xCloud",
+    "filename": "support.svg",
+    "url": "/icons/support.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "team",
+    "name": "team",
+    "category": "xCloud",
+    "filename": "team.svg",
+    "url": "/icons/team.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "theme",
+    "name": "theme",
+    "category": "xCloud",
+    "filename": "theme.svg",
+    "url": "/icons/theme.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "todo-list",
+    "name": "todo-list",
+    "category": "xCloud",
+    "filename": "todo-list.svg",
+    "url": "/icons/todo-list.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "unlock",
+    "name": "unlock",
+    "category": "xCloud",
+    "filename": "unlock.svg",
+    "url": "/icons/unlock.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "update-1",
+    "name": "update-1",
+    "category": "xCloud",
+    "filename": "update-1.svg",
+    "url": "/icons/update-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "update",
+    "name": "update",
+    "category": "xCloud",
+    "filename": "update.svg",
+    "url": "/icons/update.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "update-v2",
+    "name": "update-v2",
+    "category": "xCloud",
+    "filename": "update-v2.svg",
+    "url": "/icons/update-v2.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "upload",
+    "name": "upload",
+    "category": "xCloud",
+    "filename": "upload.svg",
+    "url": "/icons/upload.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "user-3",
+    "name": "user-3",
+    "category": "xCloud",
+    "filename": "user-3.svg",
+    "url": "/icons/user-3.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "user",
+    "name": "user",
+    "category": "xCloud",
+    "filename": "user.svg",
+    "url": "/icons/user.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "users",
+    "name": "users",
+    "category": "xCloud",
+    "filename": "users.svg",
+    "url": "/icons/users.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "vertical-menu",
+    "name": "vertical-menu",
+    "category": "xCloud",
+    "filename": "vertical-menu.svg",
+    "url": "/icons/vertical-menu.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "video",
+    "name": "video",
+    "category": "xCloud",
+    "filename": "video.svg",
+    "url": "/icons/video.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "vulnerability-scanner",
+    "name": "vulnerability-scanner",
+    "category": "xCloud",
+    "filename": "vulnerability-scanner.svg",
+    "url": "/icons/vulnerability-scanner.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "wp-debug",
+    "name": "wp-debug",
+    "category": "xCloud",
+    "filename": "wp-debug.svg",
+    "url": "/icons/wp-debug.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "wp-failtoban",
+    "name": "wp-failtoban",
+    "category": "xCloud",
+    "filename": "wp-failtoban.svg",
+    "url": "/icons/wp-failtoban.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "wallet",
+    "name": "wallet",
+    "category": "xCloud",
+    "filename": "wallet.svg",
+    "url": "/icons/wallet.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "warning",
+    "name": "warning",
+    "category": "xCloud",
+    "filename": "warning.svg",
+    "url": "/icons/warning.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "web-device",
+    "name": "web-device",
+    "category": "xCloud",
+    "filename": "web-device.svg",
+    "url": "/icons/web-device.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "web-server-1",
+    "name": "web-server-1",
+    "category": "xCloud",
+    "filename": "web-server-1.svg",
+    "url": "/icons/web-server-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "web-server",
+    "name": "web-server",
+    "category": "xCloud",
+    "filename": "web-server.svg",
+    "url": "/icons/web-server.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "white-label",
+    "name": "white-label",
+    "category": "xCloud",
+    "filename": "white-label.svg",
+    "url": "/icons/white-label.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "white-label-1",
+    "name": "white-label-1",
+    "category": "xCloud",
+    "filename": "white-label-1.svg",
+    "url": "/icons/white-label-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "white-label-2",
+    "name": "white-label-2",
+    "category": "xCloud",
+    "filename": "white-label-2.svg",
+    "url": "/icons/white-label-2.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "wordpress-fill",
+    "name": "wordpress-fill",
+    "category": "xCloud",
+    "filename": "wordpress-fill.svg",
+    "url": "/icons/wordpress-fill.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "wordpress",
+    "name": "wordpress",
+    "category": "xCloud",
+    "filename": "wordpress.svg",
+    "url": "/icons/wordpress.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "eye-close",
+    "name": "eye-close",
+    "category": "xCloud",
+    "filename": "eye-close.svg",
+    "url": "/icons/eye-close.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "http",
+    "name": "http",
+    "category": "xCloud",
+    "filename": "http.svg",
+    "url": "/icons/http.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "log",
+    "name": "log",
+    "category": "xCloud",
+    "filename": "log.svg",
+    "url": "/icons/log.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "lounch",
+    "name": "lounch",
+    "category": "xCloud",
+    "filename": "lounch.svg",
+    "url": "/icons/lounch.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "nginx",
+    "name": "nginx",
+    "category": "xCloud",
+    "filename": "nginx.svg",
+    "url": "/icons/nginx.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "tools",
+    "name": "tools",
+    "category": "xCloud",
+    "filename": "tools.svg",
+    "url": "/icons/tools.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "wp-config",
+    "name": "wp-config",
+    "category": "xCloud",
+    "filename": "wp-config.svg",
+    "url": "/icons/wp-config.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "wp-config-1",
+    "name": "wp-config-1",
+    "category": "xCloud",
+    "filename": "wp-config-1.svg",
+    "url": "/icons/wp-config-1.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "xcloud",
+    "name": "xcloud",
+    "category": "xCloud",
+    "filename": "xcloud.svg",
+    "url": "/icons/xcloud.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "phpmyadmin",
+    "name": "phpmyadmin",
+    "category": "xCloud",
+    "filename": "phpmyadmin.svg",
+    "url": "/icons/phpmyadmin.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
+  },
+  {
+    "id": "uptime-kuma",
+    "name": "uptime-kuma",
+    "category": "xCloud",
+    "filename": "uptime-kuma.svg",
+    "url": "/icons/uptime-kuma.svg",
+    "uploadedAt": "2026-03-16T08:59:54Z"
   }
 ]
