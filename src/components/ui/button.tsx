@@ -6,9 +6,9 @@ import { Loader2 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 
-// rounded-sm = calc(var(--radius) - 4px) = 4px — xCloud component radius spec
+// xCloud radius tokens: rounded-sm = 4px (component), rounded = 8px (container)
 const buttonVariants = cva(
-  "group/button inline-flex shrink-0 items-center justify-center gap-1.5 rounded-sm border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-all duration-150 outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "group/button inline-flex shrink-0 items-center justify-center rounded-sm border border-transparent bg-clip-padding font-medium whitespace-nowrap transition-all duration-150 outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 active:translate-y-px disabled:pointer-events-none disabled:opacity-30 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -29,17 +29,22 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        xs:      "h-6 gap-1 px-2 text-xs [&_svg:not([class*='size-'])]:size-3",
-        sm:      "h-7 gap-1 px-2.5 text-[0.8rem] [&_svg:not([class*='size-'])]:size-3.5",
-        default: "h-8 gap-1.5 px-3",
-        lg:      "h-9 gap-1.5 px-4",
-        xl:      "h-10 gap-2 px-5 text-base",
-        icon:         "size-8",
-        "icon-xs":    "size-6 [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm":    "size-7",
-        "icon-lg":    "size-9",
+        // Figma specs: xs 22h · sm 33h · md 36h · lg 40h (primary) / 44h (secondary/outline)
+        xs:      "h-[22px] gap-2 px-2 py-1 text-xs [&_svg:not([class*='size-'])]:size-3",
+        sm:      "h-[33px] gap-2 px-3 py-2 text-sm [&_svg:not([class*='size-'])]:size-3.5",
+        default: "h-9 gap-2 px-3 py-2 text-sm [&_svg:not([class*='size-'])]:size-4",
+        lg:      "h-10 gap-2 px-4 py-3 text-base [&_svg:not([class*='size-'])]:size-4",
+        xl:      "h-11 gap-2 px-5 py-3 text-base [&_svg:not([class*='size-'])]:size-5",
+        icon:         "size-9 [&_svg:not([class*='size-'])]:size-4",
+        "icon-xs":    "size-[22px] [&_svg:not([class*='size-'])]:size-3",
+        "icon-sm":    "size-[33px] [&_svg:not([class*='size-'])]:size-3.5",
+        "icon-lg":    "size-10 [&_svg:not([class*='size-'])]:size-5",
       },
     },
+    compoundVariants: [
+      // Secondary / outline at lg → h-11 (44px), radius stays 4px (rounded-sm from base)
+      { variant: ["secondary", "outline"], size: "lg", className: "h-11" },
+    ],
     defaultVariants: {
       variant: "default",
       size: "default",

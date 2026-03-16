@@ -219,40 +219,113 @@ export default function Playground() {
         <Separator />
 
         {/* ── BUTTONS ── */}
-        <Section title="Button — Variants">
-          <Row>
-            <Button variant="default">Default</Button>
-            <Button variant="brand">Brand</Button>
-            <Button variant="outline">Outline</Button>
-            <Button variant="secondary">Secondary</Button>
-            <Button variant="ghost">Ghost</Button>
-            <Button variant="destructive">Destructive</Button>
-            <Button variant="destructive-soft">Destructive Soft</Button>
-            <Button variant="link">Link</Button>
-          </Row>
-        </Section>
+        <Section title="Button">
+          {/* Fixed-width columns: label | state | xs=96 | sm=112 | md=128 | lg=152 */}
+          <div className="grid grid-cols-[96px_56px_96px_112px_128px_152px] items-center gap-x-3 gap-y-2.5">
 
-        <Section title="Button — Sizes">
-          <Row>
-            <Button size="xs">Extra Small</Button>
-            <Button size="sm">Small</Button>
-            <Button size="default">Default</Button>
-            <Button size="lg">Large</Button>
-            <Button size="xl">Extra Large</Button>
-          </Row>
-        </Section>
+            {/* Header */}
+            <span /><span />
+            {["XS","SM","MD","LG"].map(s => (
+              <span key={s} className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">{s}</span>
+            ))}
 
-        <Section title="Button — Icons & States">
-          <Row>
-            <Button iconLeft={<Plus />}>Add Server</Button>
-            <Button iconRight={<ArrowRight />} variant="brand">Get Started</Button>
+            {/* ── Primary ── */}
+            <span className="text-xs font-semibold text-foreground row-span-3 self-center">Primary</span>
+            <span className="text-[10px] text-muted-foreground">Icon L</span>
+            <Button variant="default" size="xs" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="default" size="sm" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="default" size="default" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="default" size="lg" iconLeft={<Plus />} className="w-full">Button</Button>
+
+            <span className="text-[10px] text-muted-foreground">Icon R</span>
+            <Button variant="default" size="xs" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="default" size="sm" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="default" size="default" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="default" size="lg" iconRight={<ArrowRight />} className="w-full">Button</Button>
+
+            <span className="text-[10px] text-muted-foreground/50">Disabled</span>
+            <Button variant="default" size="xs" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="default" size="sm" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="default" size="default" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="default" size="lg" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+
+            <span className="col-span-6 border-b border-border/50 my-0.5" />
+
+            {/* ── Secondary ── */}
+            <span className="text-xs font-semibold text-foreground row-span-3 self-center">Secondary</span>
+            <span className="text-[10px] text-muted-foreground">Icon L</span>
+            <Button variant="secondary" size="xs" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="secondary" size="sm" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="secondary" size="default" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="secondary" size="lg" iconLeft={<Plus />} className="w-full">Button</Button>
+
+            <span className="text-[10px] text-muted-foreground">Icon R</span>
+            <Button variant="secondary" size="xs" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="secondary" size="sm" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="secondary" size="default" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="secondary" size="lg" iconRight={<ArrowRight />} className="w-full">Button</Button>
+
+            <span className="text-[10px] text-muted-foreground/50">Disabled</span>
+            <Button variant="secondary" size="xs" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="secondary" size="sm" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="secondary" size="default" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="secondary" size="lg" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+
+            <span className="col-span-6 border-b border-border/50 my-0.5" />
+
+            {/* ── Outline ── */}
+            <span className="text-xs font-semibold text-foreground row-span-3 self-center">Outline</span>
+            <span className="text-[10px] text-muted-foreground">Icon L</span>
+            <Button variant="outline" size="xs" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="outline" size="sm" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="outline" size="default" iconLeft={<Plus />} className="w-full">Button</Button>
+            <Button variant="outline" size="lg" iconLeft={<Plus />} className="w-full">Button</Button>
+
+            <span className="text-[10px] text-muted-foreground">Icon R</span>
+            <Button variant="outline" size="xs" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="outline" size="sm" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="outline" size="default" iconRight={<ArrowRight />} className="w-full">Button</Button>
+            <Button variant="outline" size="lg" iconRight={<ArrowRight />} className="w-full">Button</Button>
+
+            <span className="text-[10px] text-muted-foreground/50">Disabled</span>
+            <Button variant="outline" size="xs" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="outline" size="sm" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="outline" size="default" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+            <Button variant="outline" size="lg" iconLeft={<Plus />} className="w-full" disabled>Button</Button>
+
+            <span className="col-span-6 border-b border-border/50 my-0.5" />
+
+            {/* ── Icon Only — Primary & Outline only ── */}
+            <span className="text-xs font-semibold text-foreground row-span-3 self-center">Icon</span>
+            <span className="text-[10px] text-muted-foreground">Primary</span>
+            <Button variant="default" size="icon-xs"><Plus /></Button>
+            <Button variant="default" size="icon-sm"><Plus /></Button>
+            <Button variant="default" size="icon"><Plus /></Button>
+            <Button variant="default" size="icon-lg"><Plus /></Button>
+
+            <span className="text-[10px] text-muted-foreground">Outline</span>
+            <Button variant="outline" size="icon-xs"><Plus /></Button>
+            <Button variant="outline" size="icon-sm"><Plus /></Button>
             <Button variant="outline" size="icon"><Plus /></Button>
-            <Button variant="outline" size="icon"><Trash2 /></Button>
-            <Button loading={loading} variant="brand" onClick={handleLoadingDemo}>
-              {loading ? "Deploying…" : "Deploy (click me)"}
+            <Button variant="outline" size="icon-lg"><Plus /></Button>
+
+            <span className="text-[10px] text-muted-foreground/50">Disabled</span>
+            <Button variant="default" size="icon-xs" disabled><Plus /></Button>
+            <Button variant="default" size="icon-sm" disabled><Plus /></Button>
+            <Button variant="default" size="icon" disabled><Plus /></Button>
+            <Button variant="default" size="icon-lg" disabled><Plus /></Button>
+          </div>
+
+          {/* Other variants */}
+          <div className="mt-4 flex flex-wrap items-center gap-2 border-t border-border/50 pt-4">
+            <Button variant="ghost" iconLeft={<Plus />}>Ghost</Button>
+            <Button variant="destructive" iconLeft={<Trash2 />}>Destructive</Button>
+            <Button variant="destructive-soft" iconLeft={<Trash2 />}>Destructive Soft</Button>
+            <Button variant="link" iconRight={<ArrowRight />}>Link Button</Button>
+            <Button loading={loading} variant="default" onClick={handleLoadingDemo}>
+              {loading ? "Deploying…" : "Loading demo"}
             </Button>
-            <Button disabled>Disabled</Button>
-          </Row>
+          </div>
         </Section>
 
         <Separator />
