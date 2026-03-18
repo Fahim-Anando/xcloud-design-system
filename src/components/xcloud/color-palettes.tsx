@@ -164,7 +164,7 @@ function SwatchStrip({ palette }: { palette: Palette }) {
       </div>
 
       {/* Swatch row */}
-      <div className="flex rounded-lg overflow-hidden border border-border/40">
+      <div className="flex rounded-md overflow-hidden border border-border/40">
         {palette.swatches.map((s) => {
           const dark = needsDarkText(s.hex.startsWith("#C") ? "#C0E4CD" : s.hex)
           return (
@@ -179,7 +179,7 @@ function SwatchStrip({ palette }: { palette: Palette }) {
               {/* Step label */}
               <div
                 className={cn(
-                  "px-1 pb-1.5 pt-1 text-center",
+                  "px-1 pb-2 pt-1 text-center",
                   "text-[9px] font-mono leading-none",
                   dark ? "text-black/60" : "text-white/70"
                 )}

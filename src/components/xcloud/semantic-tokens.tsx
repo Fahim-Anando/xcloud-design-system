@@ -94,7 +94,7 @@ const TOKEN_GROUPS: TokenGroup[] = [
 function Swatch({ label }: { label: string }) {
   const isWhite = label === "Light/25"
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="flex items-center gap-2">
       <span
         className={cn("inline-block size-3.5 rounded-sm shrink-0 ring-1 ring-black/10")}
         style={{ backgroundColor: cssVar(label) }}
@@ -106,7 +106,7 @@ function Swatch({ label }: { label: string }) {
 
 export function SemanticTokenTable() {
   return (
-    <div className="rounded-lg border border-border overflow-hidden">
+    <div className="rounded-md border border-border overflow-hidden">
       {/* Table header */}
       <div className="grid grid-cols-[200px_1fr_1fr_140px] gap-x-4 border-b border-border bg-muted/40 px-4 py-2">
         {["Token Name", "Light", "Dark", "Use-case"].map((h) => (
@@ -119,7 +119,7 @@ export function SemanticTokenTable() {
       {TOKEN_GROUPS.map((group) => (
         <div key={group.group}>
           {/* Group header */}
-          <div className="grid grid-cols-[200px_1fr_1fr_140px] gap-x-4 border-b border-border bg-muted/20 px-4 py-1.5">
+          <div className="grid grid-cols-[200px_1fr_1fr_140px] gap-x-4 border-b border-border bg-muted/20 px-4 py-2">
             <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground col-span-4">
               {group.group}
             </span>

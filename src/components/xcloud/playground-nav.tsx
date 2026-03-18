@@ -60,7 +60,7 @@ export function PlaygroundNav(props: PlaygroundNavProps) {
       </div>
 
       {/* Nav */}
-      <nav className="h-[calc(100vh-3.5rem)] overflow-y-auto p-3 space-y-0.5">
+      <nav className="h-[calc(100vh-3.5rem)] overflow-y-auto p-3 space-y-1">
 
         {/* Color */}
         {isRouterMode ? (
@@ -133,7 +133,7 @@ export function PlaygroundNav(props: PlaygroundNavProps) {
                       key={cat.id}
                       href={`/components/${cat.id}`}
                       className={cn(
-                        "flex w-full items-center rounded-sm px-2 py-1.5 text-xs transition-colors",
+                        "flex w-full items-center rounded-sm px-2 py-2 text-xs transition-colors",
                         activeSlug === cat.id
                           ? "bg-primary/10 font-medium text-primary"
                           : "text-text-secondary hover:bg-muted hover:text-foreground"

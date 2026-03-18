@@ -134,20 +134,20 @@ function DownloadModal({
 
         <div className="p-5 space-y-5">
           {/* Preview */}
-          <div className="flex items-center justify-center rounded-lg bg-muted/40 py-8">
+          <div className="flex items-center justify-center rounded-md bg-muted/40 py-8">
             <SvgIcon url={icon.url} size={Math.min(size, 64)} color={selectedColor.value} />
           </div>
 
           {/* Color Tokens */}
           <div className="space-y-2">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Color</p>
-            <div className="flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-2">
               {ICON_COLORS.map((color, idx) => (
                 <button
                   key={color.name}
                   onClick={() => setColorIndex(idx)}
                   className={cn(
-                    "px-2.5 py-1.5 rounded-md text-xs font-medium transition-colors",
+                    "px-3 py-2 rounded-sm text-xs font-medium transition-colors",
                     colorIndex === idx
                       ? "bg-primary text-white"
                       : "bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground"
@@ -162,13 +162,13 @@ function DownloadModal({
           {/* Size */}
           <div className="space-y-2">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Size</p>
-            <div className="grid grid-cols-6 gap-1.5">
+            <div className="grid grid-cols-6 gap-2">
               {SIZES.map((s) => (
                 <button
                   key={s}
                   onClick={() => setSize(s)}
                   className={cn(
-                    "rounded-md py-1.5 text-xs font-mono font-medium transition-colors",
+                    "rounded-sm py-2 text-xs font-mono font-medium transition-colors",
                     size === s
                       ? "bg-primary text-white"
                       : "bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground"
@@ -183,7 +183,7 @@ function DownloadModal({
           {/* Format */}
           <div className="space-y-2">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Format</p>
-            <div className="grid grid-cols-2 gap-1.5">
+            <div className="grid grid-cols-2 gap-2">
               {(["svg", "png"] as IconFormat[]).map((f) => (
                 <button
                   key={f}
@@ -206,7 +206,7 @@ function DownloadModal({
             <button
               onClick={handleDownload}
               disabled={downloading || copying}
-              className="flex flex-1 h-10 items-center justify-center gap-2 rounded-lg bg-secondary text-sm font-semibold text-foreground transition-colors hover:bg-secondary/80 disabled:opacity-40"
+              className="flex flex-1 h-10 items-center justify-center gap-2 rounded-sm bg-secondary text-sm font-semibold text-foreground transition-colors hover:bg-secondary/80 disabled:opacity-40"
             >
               {downloading ? (
                 <><Loader2 className="size-4 animate-spin" /> Downloading…</>
@@ -217,7 +217,7 @@ function DownloadModal({
             <button
               onClick={handleCopy}
               disabled={copying || downloading}
-              className="flex flex-1 h-10 items-center justify-center gap-2 rounded-lg bg-secondary text-sm font-semibold text-foreground transition-colors hover:bg-secondary/80 disabled:opacity-40"
+              className="flex flex-1 h-10 items-center justify-center gap-2 rounded-sm bg-secondary text-sm font-semibold text-foreground transition-colors hover:bg-secondary/80 disabled:opacity-40"
             >
               {copying ? (
                 <><Loader2 className="size-4 animate-spin" /> Copying…</>
@@ -238,7 +238,7 @@ function IconCard({ icon }: { icon: IconMeta }) {
   const [showDownload, setShowDownload] = useState(false)
 
   return (
-    <div className="relative flex flex-col items-center gap-2 rounded-lg border border-border bg-card p-3 transition-shadow hover:shadow-md">
+    <div className="relative flex flex-col items-center gap-2 rounded-md border border-border bg-card p-3 transition-shadow hover:shadow-md">
       {/* Icon preview */}
       <div className="flex h-12 w-12 items-center justify-center rounded-md bg-muted/40">
         <SvgIcon url={icon.url} size={32} />
@@ -252,7 +252,7 @@ function IconCard({ icon }: { icon: IconMeta }) {
       {/* Download trigger */}
       <button
         onClick={() => setShowDownload(true)}
-        className="flex h-7 w-full items-center justify-center gap-1.5 rounded-sm bg-primary text-white text-[10px] font-medium transition-colors hover:bg-primary/90"
+        className="flex h-7 w-full items-center justify-center gap-2 rounded-sm bg-primary text-white text-[10px] font-medium transition-colors hover:bg-primary/90"
       >
         <Download className="size-3.5" />
         Download
@@ -317,7 +317,7 @@ export function IconLibrary() {
 
         {/* Category tabs */}
         {categories.length > 1 && (
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -342,7 +342,7 @@ export function IconLibrary() {
             <span className="text-sm">Loading icons…</span>
           </div>
         ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-border py-20 text-center">
+          <div className="flex flex-col items-center justify-center gap-3 rounded-md border border-dashed border-border py-20 text-center">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-muted">
               <Search className="size-5 text-muted-foreground" />
             </div>

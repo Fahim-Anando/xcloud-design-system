@@ -147,7 +147,7 @@ export default function ComponentPage() {
           <div className="flex h-14 items-center justify-between px-6">
             <Link
               href="/components"
-              className="flex items-center gap-1.5 text-sm text-text-secondary hover:text-foreground transition-colors"
+              className="flex items-center gap-2 text-sm text-text-secondary hover:text-foreground transition-colors"
             >
               <ArrowLeft className="size-4" />
               <span>Components</span>
@@ -185,86 +185,86 @@ export default function ComponentPage() {
               <div className="grid grid-cols-[96px_56px_70px_88px_99px_107px] items-center gap-x-3 gap-y-2.5">
                 <span /><span />
                 {["XS","SM","MD","LG"].map(s => (
-                  <span key={s} className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">{s}</span>
+                  <span key={s} className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">{s}</span>
                 ))}
 
                 <span className="text-xs font-semibold text-foreground row-span-3 self-center">Primary</span>
-                <span className="text-[10px] text-muted-foreground">Icon L</span>
+                <span className="text-xs text-muted-foreground">Icon L</span>
                 <Button variant="default" size="xs" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="default" size="sm" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="default" size="default" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="default" size="lg" iconLeft={<CircleIcon />} className="w-full">Button</Button>
 
-                <span className="text-[10px] text-muted-foreground">Icon R</span>
+                <span className="text-xs text-muted-foreground">Icon R</span>
                 <Button variant="default" size="xs" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="default" size="sm" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="default" size="default" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="default" size="lg" iconRight={<CircleIcon />} className="w-full">Button</Button>
 
-                <span className="text-[10px] text-muted-foreground/50">Disabled</span>
+                <span className="text-xs text-muted-foreground/50">Disabled</span>
                 <Button variant="default" size="xs" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="default" size="sm" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="default" size="default" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="default" size="lg" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
 
-                <span className="col-span-6 border-b border-border/50 my-0.5" />
+                <span className="col-span-6 border-b border-border/50 my-1" />
 
                 <span className="text-xs font-semibold text-foreground row-span-3 self-center">Secondary</span>
-                <span className="text-[10px] text-muted-foreground">Icon L</span>
+                <span className="text-xs text-muted-foreground">Icon L</span>
                 <Button variant="secondary" size="xs" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="secondary" size="sm" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="secondary" size="default" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="secondary" size="lg" iconLeft={<CircleIcon />} className="w-full">Button</Button>
 
-                <span className="text-[10px] text-muted-foreground">Icon R</span>
+                <span className="text-xs text-muted-foreground">Icon R</span>
                 <Button variant="secondary" size="xs" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="secondary" size="sm" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="secondary" size="default" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="secondary" size="lg" iconRight={<CircleIcon />} className="w-full">Button</Button>
 
-                <span className="text-[10px] text-muted-foreground/50">Disabled</span>
+                <span className="text-xs text-muted-foreground/50">Disabled</span>
                 <Button variant="secondary" size="xs" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="secondary" size="sm" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="secondary" size="default" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="secondary" size="lg" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
 
-                <span className="col-span-6 border-b border-border/50 my-0.5" />
+                <span className="col-span-6 border-b border-border/50 my-1" />
 
                 <span className="text-xs font-semibold text-foreground row-span-3 self-center">Outline</span>
-                <span className="text-[10px] text-muted-foreground">Icon L</span>
+                <span className="text-xs text-muted-foreground">Icon L</span>
                 <Button variant="outline" size="xs" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="outline" size="sm" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="outline" size="default" iconLeft={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="outline" size="lg" iconLeft={<CircleIcon />} className="w-full">Button</Button>
 
-                <span className="text-[10px] text-muted-foreground">Icon R</span>
+                <span className="text-xs text-muted-foreground">Icon R</span>
                 <Button variant="outline" size="xs" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="outline" size="sm" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="outline" size="default" iconRight={<CircleIcon />} className="w-full">Button</Button>
                 <Button variant="outline" size="lg" iconRight={<CircleIcon />} className="w-full">Button</Button>
 
-                <span className="text-[10px] text-muted-foreground/50">Disabled</span>
+                <span className="text-xs text-muted-foreground/50">Disabled</span>
                 <Button variant="outline" size="xs" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="outline" size="sm" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="outline" size="default" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
                 <Button variant="outline" size="lg" iconLeft={<CircleIcon />} className="w-full" disabled>Button</Button>
 
-                <span className="col-span-6 border-b border-border/50 my-0.5" />
+                <span className="col-span-6 border-b border-border/50 my-1" />
 
                 <span className="text-xs font-semibold text-foreground row-span-3 self-center">Icon</span>
-                <span className="text-[10px] text-muted-foreground">Primary</span>
+                <span className="text-xs text-muted-foreground">Primary</span>
                 <Button variant="default" size="icon-xs"><CircleIcon /></Button>
                 <Button variant="default" size="icon-sm"><CircleIcon /></Button>
                 <Button variant="default" size="icon"><CircleIcon /></Button>
                 <Button variant="default" size="icon-lg"><CircleIcon /></Button>
 
-                <span className="text-[10px] text-muted-foreground">Outline</span>
+                <span className="text-xs text-muted-foreground">Outline</span>
                 <Button variant="outline" size="icon-xs"><CircleIcon /></Button>
                 <Button variant="outline" size="icon-sm"><CircleIcon /></Button>
                 <Button variant="outline" size="icon"><CircleIcon /></Button>
                 <Button variant="outline" size="icon-lg"><CircleIcon /></Button>
 
-                <span className="text-[10px] text-muted-foreground/50">Disabled</span>
+                <span className="text-xs text-muted-foreground/50">Disabled</span>
                 <Button variant="default" size="icon-xs" disabled><CircleIcon /></Button>
                 <Button variant="default" size="icon-sm" disabled><CircleIcon /></Button>
                 <Button variant="default" size="icon" disabled><CircleIcon /></Button>
@@ -346,7 +346,7 @@ export default function ComponentPage() {
             <Section title="Input">
               <div className="grid max-w-xl gap-6">
                 {/* States */}
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">States</p>
                   <div className="grid gap-4">
                     <InputField label="Default" placeholder="Search servers…" />
@@ -356,7 +356,7 @@ export default function ComponentPage() {
                 </div>
 
                 {/* Label variants */}
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Label Variants</p>
                   <div className="grid gap-4">
                     <InputField label="Domain name" placeholder="my-site.com" />
@@ -377,7 +377,7 @@ export default function ComponentPage() {
                 </div>
 
                 {/* Helper & Error */}
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Helper & Error</p>
                   <div className="grid gap-4">
                     <InputField
@@ -396,15 +396,15 @@ export default function ComponentPage() {
                 </div>
 
                 {/* Disabled */}
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Disabled</p>
                   <InputField label="Server name" placeholder="my-server" disabled />
                 </div>
 
                 {/* Textarea */}
-                <div className="space-y-1.5">
+                <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Textarea</p>
-                  <div className="grid gap-1.5">
+                  <div className="grid gap-2">
                     <Label htmlFor="note">Notes</Label>
                     <Textarea id="note" placeholder="Add server notes here…" rows={3} />
                   </div>
@@ -609,7 +609,7 @@ export default function ComponentPage() {
           {/* ── TABLE ── */}
           {slug === "table" && (
             <Section title="Table">
-              <div className="rounded-lg border border-border">
+              <div className="rounded-md border border-border">
                 <Table>
                   <TableCaption className="pb-3">Active servers in your account</TableCaption>
                   <TableHeader>
@@ -680,8 +680,8 @@ export default function ComponentPage() {
                     <Skeleton className="h-3 w-1/2" />
                   </div>
                 </div>
-                <Skeleton className="h-32 w-full rounded-lg" />
-                <div className="space-y-1.5">
+                <Skeleton className="h-32 w-full rounded-md" />
+                <div className="space-y-2">
                   <Skeleton className="h-3 w-full" />
                   <Skeleton className="h-3 w-5/6" />
                   <Skeleton className="h-3 w-4/6" />
@@ -766,7 +766,7 @@ export default function ComponentPage() {
                       <SheetDescription>Adjust configuration for prod-server-01.</SheetDescription>
                     </SheetHeader>
                     <div className="grid gap-4 py-6">
-                      <div className="grid gap-1.5">
+                      <div className="grid gap-2">
                         <Label>Hostname</Label>
                         <Input defaultValue="prod-server-01" />
                       </div>
@@ -778,21 +778,21 @@ export default function ComponentPage() {
                 </Sheet>
 
                 <Drawer>
-                  <DrawerTrigger className="inline-flex h-8 items-center justify-center gap-1.5 rounded-sm border border-border bg-background px-3 text-sm font-medium text-foreground shadow-xs transition-colors hover:bg-muted">Open Drawer</DrawerTrigger>
+                  <DrawerTrigger className="inline-flex h-8 items-center justify-center gap-2 rounded-sm border border-border bg-background px-3 text-sm font-medium text-foreground shadow-xs transition-colors hover:bg-muted">Open Drawer</DrawerTrigger>
                   <DrawerContent>
                     <DrawerHeader>
                       <DrawerTitle>Add New Site</DrawerTitle>
                       <DrawerDescription>Connect a WordPress site to your server.</DrawerDescription>
                     </DrawerHeader>
                     <div className="px-4 pb-4 space-y-3">
-                      <div className="grid gap-1.5">
+                      <div className="grid gap-2">
                         <Label>Site domain</Label>
                         <Input placeholder="my-site.com" />
                       </div>
                     </div>
                     <DrawerFooter>
                       <Button variant="brand">Create Site</Button>
-                      <DrawerClose className="inline-flex h-8 w-full items-center justify-center gap-1.5 rounded-sm px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">Cancel</DrawerClose>
+                      <DrawerClose className="inline-flex h-8 w-full items-center justify-center gap-2 rounded-sm px-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">Cancel</DrawerClose>
                     </DrawerFooter>
                   </DrawerContent>
                 </Drawer>
@@ -860,7 +860,7 @@ export default function ComponentPage() {
                 </DropdownMenu>
 
                 <ContextMenu>
-                  <ContextMenuTrigger className="flex h-20 w-48 items-center justify-center rounded-lg border border-dashed border-border text-sm text-muted-foreground cursor-context-menu select-none">
+                  <ContextMenuTrigger className="flex h-20 w-48 items-center justify-center rounded-md border border-dashed border-border text-sm text-muted-foreground cursor-context-menu select-none">
                     Right-click me
                   </ContextMenuTrigger>
                   <ContextMenuContent>
@@ -927,7 +927,7 @@ export default function ComponentPage() {
                           { icon: Database, label: "Managed Databases", desc: "MySQL & Redis clusters" },
                         ].map(({ icon: Icon, label, desc }) => (
                           <NavigationMenuLink key={label} className="flex items-start gap-3 rounded-md p-2 hover:bg-muted cursor-pointer">
-                            <Icon className="size-4 mt-0.5 text-primary" />
+                            <Icon className="size-4 mt-1 text-primary" />
                             <div>
                               <p className="text-sm font-medium">{label}</p>
                               <p className="text-xs text-muted-foreground">{desc}</p>
@@ -973,7 +973,7 @@ export default function ComponentPage() {
           {/* ── COMMAND ── */}
           {slug === "command" && (
             <Section title="Command">
-              <div className="max-w-sm rounded-lg border border-border shadow-md">
+              <div className="max-w-sm rounded-md border border-border shadow-md">
                 <Command>
                   <CommandInput placeholder="Search servers, sites, backups…" />
                   <CommandList>
@@ -1001,7 +1001,7 @@ export default function ComponentPage() {
                 mode="single"
                 selected={calendarDate}
                 onSelect={setCalendarDate}
-                className="rounded-lg border border-border w-fit"
+                className="rounded-md border border-border w-fit"
               />
             </Section>
           )}
@@ -1009,12 +1009,12 @@ export default function ComponentPage() {
           {/* ── SCROLL AREA ── */}
           {slug === "scroll-area" && (
             <Section title="Scroll Area">
-              <ScrollArea className="h-48 w-full max-w-sm rounded-lg border border-border">
+              <ScrollArea className="h-48 w-full max-w-sm rounded-md border border-border">
                 <div className="p-4 space-y-2">
                   {Array.from({ length: 20 }, (_, i) => (
                     <div key={i} className="flex items-center justify-between py-1">
                       <span className="text-sm text-foreground">Backup #{String(i + 1).padStart(3, "0")}</span>
-                      <Badge variant="muted" className="text-[10px]">2.{i}GB</Badge>
+                      <Badge variant="muted" className="text-xs">2.{i}GB</Badge>
                     </div>
                   ))}
                 </div>
@@ -1051,7 +1051,7 @@ export default function ComponentPage() {
           {/* ── RESIZABLE ── */}
           {slug === "resizable" && (
             <Section title="Resizable">
-              <ResizablePanelGroup orientation="horizontal" className="max-w-lg rounded-lg border border-border min-h-[120px]">
+              <ResizablePanelGroup orientation="horizontal" className="max-w-lg rounded-md border border-border min-h-[120px]">
                 <ResizablePanel defaultSize={35}>
                   <div className="flex h-full flex-col p-4">
                     <p className="text-xs font-medium text-muted-foreground uppercase mb-2">Sidebar</p>
@@ -1076,13 +1076,13 @@ export default function ComponentPage() {
           {slug === "kbd" && (
             <Section title="Keyboard Shortcut (Kbd)">
               <Row>
-                <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Kbd>⌘</Kbd><Kbd>K</Kbd><span>Open command palette</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Kbd>⌘</Kbd><Kbd>N</Kbd><span>New server</span>
                 </div>
-                <div className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Kbd>Esc</Kbd><span>Close panel</span>
                 </div>
               </Row>

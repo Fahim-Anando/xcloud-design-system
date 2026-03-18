@@ -86,13 +86,13 @@ export default function Playground() {
                 <div className="space-y-6">
 
                   <div>
-                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Headings</p>
-                    <div className="rounded-lg border border-border overflow-hidden">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Headings</p>
+                    <div className="rounded-md border border-border overflow-hidden">
                       <div className="grid grid-cols-[200px_56px_56px_1fr] gap-x-4 border-b border-border bg-muted/40 px-4 py-2">
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
                       </div>
                       {[
                         { token: "text-heading-xxlarge", size: "36px", weight: "600", cls: "text-[36px] font-semibold leading-tight" },
@@ -116,13 +116,13 @@ export default function Playground() {
                   </div>
 
                   <div>
-                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Body</p>
-                    <div className="rounded-lg border border-border overflow-hidden">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Body</p>
+                    <div className="rounded-md border border-border overflow-hidden">
                       <div className="grid grid-cols-[200px_56px_56px_1fr] gap-x-4 border-b border-border bg-muted/40 px-4 py-2">
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
                       </div>
                       {[
                         { token: "text-large",   size: "18px", weight: "500", cls: "text-[18px] font-medium" },
@@ -145,13 +145,13 @@ export default function Playground() {
                   </div>
 
                   <div>
-                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Paragraph</p>
-                    <div className="rounded-lg border border-border overflow-hidden">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Paragraph</p>
+                    <div className="rounded-md border border-border overflow-hidden">
                       <div className="grid grid-cols-[200px_56px_56px_1fr] gap-x-4 border-b border-border bg-muted/40 px-4 py-2">
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
-                        <span className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Token</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Size</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Weight</span>
+                        <span className="text-xs font-semibold uppercase tracking-widest text-muted-foreground/60">Preview</span>
                       </div>
                       {[
                         { token: "text-paragraph-medium", size: "16px", weight: "400", cls: "text-base font-normal leading-relaxed" },

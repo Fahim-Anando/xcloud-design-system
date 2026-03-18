@@ -93,8 +93,8 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
                 <span
                   role="tooltip"
                   className={cn(
-                    "pointer-events-none absolute bottom-full left-1/2 z-50 mb-1.5 -translate-x-1/2",
-                    "w-max max-w-52 rounded-sm bg-popover px-2.5 py-1.5",
+                    "pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2",
+                    "w-max max-w-52 rounded-sm bg-popover px-3 py-2",
                     "border border-border text-xs text-popover-foreground shadow-md",
                     "opacity-0 transition-opacity duration-150 group-hover:opacity-100",
                     // Arrow
