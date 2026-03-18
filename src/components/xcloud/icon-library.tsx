@@ -171,7 +171,7 @@ function DownloadModal({
             <button
               onClick={handleDownload}
               disabled={downloading || copying}
-              className="flex flex-1 h-10 items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-white transition-colors hover:bg-primary/90 disabled:opacity-40"
+              className="flex flex-1 h-10 items-center justify-center gap-2 rounded-lg bg-secondary text-sm font-semibold text-foreground transition-colors hover:bg-secondary/80 disabled:opacity-40"
             >
               {downloading ? (
                 <><Loader2 className="size-4 animate-spin" /> Downloading…</>

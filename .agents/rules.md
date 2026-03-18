@@ -44,3 +44,9 @@ These rules apply to every task in this project. Never override them.
 - Toggle via `.dark` class on `<html>`
 - Never use `prefers-color-scheme` media query — use next-themes
 - Verify: text readable, borders correct, brand blue hover uses `#0E57B6` (not `#1169DB`) in dark
+
+## Button Hierarchy
+- **One primary button per page/modal** — use `bg-primary` only for the main action
+- Secondary actions use `bg-secondary`
+- Tertiary/utility actions use `bg-muted` or `bg-ghost`
+- This ensures clear visual hierarchy and prevents action confusion
