@@ -1,9 +1,9 @@
 "use client"
 
 import { useState, useCallback, useEffect } from "react"
-import { Search, Download, X, Loader2 } from "lucide-react"
+import { Search, Download, Copy, X, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { downloadSVG, downloadPNG } from "@/lib/icon-download"
+import { downloadSVG, downloadPNG, copySVG, copyPNG } from "@/lib/icon-download"
 import { toast } from "sonner"
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -57,6 +57,7 @@ function DownloadModal({
   const [size, setSize] = useState<IconSize>(24)
   const [format, setFormat] = useState<IconFormat>("svg")
   const [downloading, setDownloading] = useState(false)
+  const [copying, setCopying] = useState(false)
 
   // Close on Escape key
   useEffect(() => {
@@ -78,6 +79,22 @@ function DownloadModal({
       toast.error("Download failed")
     } finally {
       setDownloading(false)
+    }
+  }
+
+  const handleCopy = async () => {
+    setCopying(true)
+    try {
+      if (format === "svg") {
+        await copySVG(icon.url, size)
+      } else {
+        await copyPNG(icon.url, size)
+      }
+      toast.success(`Copied ${icon.name} ${format.toUpperCase()} to clipboard`)
+    } catch {
+      toast.error("Copy failed")
+    } finally {
+      setCopying(false)
     }
   }
 
@@ -149,18 +166,31 @@ function DownloadModal({
             </div>
           </div>
 
-          {/* Download button */}
-          <button
-            onClick={handleDownload}
-            disabled={downloading}
-            className="flex w-full h-10 items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-white transition-colors hover:bg-primary/90 disabled:opacity-40"
-          >
-            {downloading ? (
-              <><Loader2 className="size-4 animate-spin" /> Downloading…</>
-            ) : (
-              <><Download className="size-4" /> Download {size}px .{format}</>
-            )}
-          </button>
+          {/* Download & Copy buttons */}
+          <div className="flex gap-2">
+            <button
+              onClick={handleDownload}
+              disabled={downloading || copying}
+              className="flex flex-1 h-10 items-center justify-center gap-2 rounded-lg bg-primary text-sm font-semibold text-white transition-colors hover:bg-primary/90 disabled:opacity-40"
+            >
+              {downloading ? (
+                <><Loader2 className="size-4 animate-spin" /> Downloading…</>
+              ) : (
+                <><Download className="size-4" /> Download</>
+              )}
+            </button>
+            <button
+              onClick={handleCopy}
+              disabled={copying || downloading}
+              className="flex flex-1 h-10 items-center justify-center gap-2 rounded-lg bg-secondary text-sm font-semibold text-foreground transition-colors hover:bg-secondary/80 disabled:opacity-40"
+            >
+              {copying ? (
+                <><Loader2 className="size-4 animate-spin" /> Copying…</>
+              ) : (
+                <><Copy className="size-4" /> Copy</>
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </div>
