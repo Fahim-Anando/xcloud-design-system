@@ -8,7 +8,7 @@ function Input({ className, type, ...props }: React.ComponentProps<"input">) {
       data-slot="input"
       className={cn(
         // Layout
-        "flex h-11 w-full min-w-0",
+        "flex h-11 w-full min-w-80",
         // Shape & Surface — matches Figma: surface-secondary bg, border-primary border, 4px radius
         "rounded-sm border border-border bg-card",
         // Spacing — Figma: px-16 py-12

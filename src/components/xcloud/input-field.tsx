@@ -45,7 +45,7 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
     const hasError = !!error
 
     return (
-      <div className="flex w-full flex-col gap-1">
+      <div className="flex w-full min-w-80 flex-col gap-1">
         {/* Label row */}
         {label && (
           <div className="flex items-center gap-1 leading-tight">
