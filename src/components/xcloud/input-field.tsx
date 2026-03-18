@@ -1,12 +1,15 @@
 "use client"
 
 import * as React from "react"
+import { Info } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Input } from "@/components/ui/input"
 
 interface InputFieldProps extends React.ComponentProps<"input"> {
   /** Label text shown above the input */
   label?: string
+  /** Tooltip text shown on the ⓘ icon next to the label */
+  labelTooltip?: string
   /** Appends " * (Optional)" to the label */
   optional?: boolean
   /** Appends a blue "*" to the label (required field) */
@@ -27,6 +30,7 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
   (
     {
       label,
+      labelTooltip,
       optional = false,
       required = false,
       helperText,
@@ -60,6 +64,29 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
             )}
             {optional && (
               <span className="text-sm text-muted-foreground">(Optional)</span>
+            )}
+            {/* Tooltip trigger */}
+            {labelTooltip && (
+              <span className="group relative inline-flex items-center">
+                <Info className="size-3.5 cursor-default text-icon-tertiary transition-colors group-hover:text-icon-secondary" />
+                {/* Tooltip bubble */}
+                <span
+                  role="tooltip"
+                  className={cn(
+                    "pointer-events-none absolute bottom-full left-1/2 z-50 mb-1.5 -translate-x-1/2",
+                    "w-max max-w-52 rounded-sm bg-popover px-2.5 py-1.5",
+                    "border border-border text-xs text-popover-foreground shadow-md",
+                    "opacity-0 transition-opacity duration-150 group-hover:opacity-100",
+                    // Arrow
+                    "after:absolute after:left-1/2 after:top-full after:-translate-x-1/2",
+                    "after:border-4 after:border-transparent after:border-t-border after:content-['']",
+                    "before:absolute before:left-1/2 before:top-full before:-translate-x-1/2 before:-mt-px",
+                    "before:border-4 before:border-transparent before:border-t-popover before:content-['']"
+                  )}
+                >
+                  {labelTooltip}
+                </span>
+              </span>
             )}
           </div>
         )}

@@ -362,6 +362,17 @@ export default function ComponentPage() {
                     <InputField label="Domain name" placeholder="my-site.com" />
                     <InputField label="Notes" optional placeholder="Add optional notes…" />
                     <InputField label="Email address" required placeholder="name@example.com" />
+                    <InputField
+                      label="PHP Version"
+                      labelTooltip="Changing the PHP version will restart your server. Existing processes may be interrupted."
+                      placeholder="e.g. 8.3"
+                    />
+                    <InputField
+                      label="Memory Limit"
+                      required
+                      labelTooltip="Maximum memory allocated per request. Recommended: 256MB for most applications."
+                      placeholder="256"
+                    />
                   </div>
                 </div>
 
