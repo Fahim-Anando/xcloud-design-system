@@ -122,7 +122,7 @@ export function PlaygroundNav(props: PlaygroundNavProps) {
 
           {/* Sub-menu with fixed height */}
           {showComponentsSubMenu && (
-            <div className="mt-1 max-h-80 overflow-y-auto space-y-3 pb-1 pl-2 rounded-sm border border-border/50 bg-muted/30">
+            <div className="scrollbar-hide-hover mt-1 max-h-80 overflow-y-auto space-y-3 pb-1 pl-2 rounded-sm border border-border/50 bg-muted/30">
               {GROUPS.map(group => (
                 <div key={group}>
                   <p className="sticky top-0 bg-muted/30 px-2 pb-1 pt-2 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/50">

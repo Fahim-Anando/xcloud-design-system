@@ -379,3 +379,28 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 }
+
+/* ── Scrollbar utilities ─────────────────────────────────── */
+@layer utilities {
+  .scrollbar-hide-hover {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--border) 30%) transparent;
+  }
+
+  .scrollbar-hide-hover::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-hide-hover::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-hide-hover::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--border) 30%);
+    border-radius: 3px;
+  }
+
+  .scrollbar-hide-hover:hover::-webkit-scrollbar-thumb {
+    background: var(--border);
+  }
+}
