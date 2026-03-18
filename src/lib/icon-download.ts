@@ -78,7 +78,19 @@ export async function copySVG(url: string, size: number): Promise<void> {
     return `<svg${cleaned} width="${size}" height="${size}">`
   })
 
-  await navigator.clipboard.writeText(svgText)
+  try {
+    await navigator.clipboard.writeText(svgText)
+  } catch (err) {
+    // Fallback: copy via textarea
+    const textarea = document.createElement("textarea")
+    textarea.value = svgText
+    textarea.style.position = "fixed"
+    textarea.style.opacity = "0"
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand("copy")
+    document.body.removeChild(textarea)
+  }
 }
 
 export async function copyPNG(url: string, size: number): Promise<void> {
@@ -96,15 +108,17 @@ export async function copyPNG(url: string, size: number): Promise<void> {
         return
       }
       ctx.drawImage(img, 0, 0, size, size)
-      canvas.toBlob((blob) => {
+      canvas.toBlob(async (blob) => {
         if (!blob) {
           reject(new Error("Canvas toBlob returned null"))
           return
         }
-        navigator.clipboard
-          .write([new ClipboardItem({ "image/png": blob })])
-          .then(resolve)
-          .catch(reject)
+        try {
+          await navigator.clipboard.write([new ClipboardItem({ "image/png": blob })])
+          resolve()
+        } catch (err) {
+          reject(new Error(`Clipboard write failed: ${err instanceof Error ? err.message : String(err)}`))
+        }
       }, "image/png")
     }
 
