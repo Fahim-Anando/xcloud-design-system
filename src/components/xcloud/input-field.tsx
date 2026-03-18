@@ -47,6 +47,26 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
     const uid = React.useId()
     const inputId = id ?? uid
     const hasError = !!error
+    const [isFilled, setIsFilled] = React.useState(!!props.defaultValue)
+    const inputRef = React.useRef<HTMLInputElement>(null)
+
+    // Merge refs
+    React.useImperativeHandle(ref, () => inputRef.current!)
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setIsFilled(!!e.target.value)
+      props.onChange?.(e)
+    }
+
+    const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
+      setIsFilled(!!e.target.value)
+      props.onFocus?.(e)
+    }
+
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+      setIsFilled(!!e.target.value)
+      props.onBlur?.(e)
+    }
 
     return (
       <div className="flex w-full min-w-80 flex-col gap-1">
@@ -94,12 +114,15 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
         {/* Input with optional icon slots */}
         <div className="relative flex items-center">
           {iconLeft && (
-            <div className="pointer-events-none absolute left-4 flex items-center text-icon-tertiary">
+            <div className={cn(
+              "pointer-events-none absolute left-4 flex items-center transition-colors duration-150",
+              isFilled ? "text-icon-secondary" : "text-icon-tertiary"
+            )}>
               {iconLeft}
             </div>
           )}
           <Input
-            ref={ref}
+            ref={inputRef}
             id={inputId}
             aria-invalid={hasError || undefined}
             className={cn(
@@ -107,10 +130,16 @@ const InputField = React.forwardRef<HTMLInputElement, InputFieldProps>(
               iconRight && "pr-10",
               className
             )}
+            onChange={handleChange}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
             {...props}
           />
           {iconRight && (
-            <div className="pointer-events-none absolute right-4 flex items-center text-icon-tertiary">
+            <div className={cn(
+              "pointer-events-none absolute right-4 flex items-center transition-colors duration-150",
+              isFilled ? "text-icon-secondary" : "text-icon-tertiary"
+            )}>
               {iconRight}
             </div>
           )}
