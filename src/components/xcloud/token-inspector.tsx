@@ -457,13 +457,19 @@ function inspectElement(el: Element): InspectorData {
   ]
 
   const borderRadius = styles.borderRadius
+  // Browser computes rounded-full (9999px) as a very large clamped value like 1.67772e+07px
+  const normalizedRadius = (() => {
+    const num = parseFloat(borderRadius)
+    if (!isNaN(num) && num >= 1000) return "9999px"
+    return borderRadius
+  })()
   const pt = styles.paddingTop, pr = styles.paddingRight
   const pb = styles.paddingBottom, pl = styles.paddingLeft
   const paddingTokens = [pt, pr, pb, pl]
     .map(v => SPACING_TOKEN_MAP[v] ? `${v} (${SPACING_TOKEN_MAP[v]})` : v)
     .join(" · ")
   const spacing = [
-    { property: "Border Radius", value: RADIUS_MAP[borderRadius] ? `${borderRadius} — ${RADIUS_MAP[borderRadius]}` : borderRadius },
+    { property: "Border Radius", value: RADIUS_MAP[normalizedRadius] ? `${normalizedRadius} — ${RADIUS_MAP[normalizedRadius]}` : normalizedRadius },
     { property: "Padding", value: paddingTokens },
     { property: "Height", value: styles.height },
     { property: "Width", value: styles.width },
