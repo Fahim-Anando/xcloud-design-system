@@ -23,14 +23,14 @@ type IconFormat = "svg" | "png"
 
 // ── SVG icon rendered via CSS mask (inherits --icon-primary color) ──────────
 
-function SvgIcon({ url, size = 32, className }: { url: string; size?: number; className?: string }) {
+function SvgIcon({ url, size = 32, color, className }: { url: string; size?: number; color?: string; className?: string }) {
   return (
     <div
       className={className}
       style={{
         width: size,
         height: size,
-        backgroundColor: "var(--icon-primary)",
+        backgroundColor: color || "var(--icon-primary)",
         WebkitMaskImage: `url(${url})`,
         maskImage: `url(${url})`,
         WebkitMaskRepeat: "no-repeat",
@@ -56,6 +56,7 @@ function DownloadModal({
 }) {
   const [size, setSize] = useState<IconSize>(24)
   const [format, setFormat] = useState<IconFormat>("svg")
+  const [color, setColor] = useState("#E4E7EB")
   const [downloading, setDownloading] = useState(false)
   const [copying, setCopying] = useState(false)
 
@@ -121,7 +122,26 @@ function DownloadModal({
         <div className="p-5 space-y-5">
           {/* Preview */}
           <div className="flex items-center justify-center rounded-lg bg-muted/40 py-8">
-            <SvgIcon url={icon.url} size={Math.min(size, 64)} />
+            <SvgIcon url={icon.url} size={Math.min(size, 64)} color={color} />
+          </div>
+
+          {/* Color */}
+          <div className="space-y-2">
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Color</p>
+            <div className="flex items-center gap-2">
+              <input
+                type="color"
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+                className="h-10 w-16 rounded-md border border-border cursor-pointer"
+              />
+              <input
+                type="text"
+                value={color}
+                onChange={(e) => setColor(e.target.value)}
+                className="flex-1 h-10 rounded-md border border-border bg-muted px-2 text-xs font-mono text-foreground"
+              />
+            </div>
           </div>
 
           {/* Size */}
