@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react"
 import { X, Palette, Type, BoxSelect, Layers } from "lucide-react"
+// Palette + Type kept — used in State subsection headers
 import { cn } from "@/lib/utils"
 
 // ── Token lookup table ─────────────────────────────────────────────────────
@@ -545,51 +546,6 @@ export function TokenInspectorPanel({ data, open, onClose }: TokenInspectorProps
               )}
             </div>
           </div>
-
-          {/* Live Colors */}
-          {data.colors.length > 0 && (
-            <section className="border-b border-border px-4 py-3">
-              <div className="mb-2 flex items-center gap-1.5">
-                <Palette className="size-3.5 text-muted-foreground" />
-                <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Live Colors</p>
-              </div>
-              <div className="space-y-2">
-                {data.colors.map((row) => (
-                  <div key={row.property} className="flex items-start justify-between gap-2">
-                    <span className="text-xs text-muted-foreground shrink-0">{row.property}</span>
-                    <div className="flex flex-col items-end gap-0.5">
-                      <div className="flex items-center gap-1.5">
-                        <ColorSwatch hex={row.hex} />
-                        <span className="font-mono text-xs text-foreground">{row.hex}</span>
-                      </div>
-                      <span className="font-mono text-[10px] text-primary/80">{row.token}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* Live Typography */}
-          <section className="border-b border-border px-4 py-3">
-            <div className="mb-2 flex items-center gap-1.5">
-              <Type className="size-3.5 text-muted-foreground" />
-              <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Live Typography</p>
-            </div>
-            <div className="space-y-2">
-              {data.typography.map((row) => (
-                <div key={row.property} className="flex items-start justify-between gap-2">
-                  <span className="text-xs text-muted-foreground shrink-0">{row.property}</span>
-                  <div className="flex flex-col items-end gap-0.5">
-                    <span className="font-mono text-xs text-foreground">{row.value}</span>
-                    {row.token !== row.value && (
-                      <span className="font-mono text-[10px] text-primary/80">{row.token}</span>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
 
           {/* Spacing & Shape */}
           <section className="border-b border-border px-4 py-3">
