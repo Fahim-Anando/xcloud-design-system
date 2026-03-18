@@ -60,6 +60,7 @@
   /* Borders */
   --color-border:           var(--border);
   --color-border-secondary: var(--border-secondary);
+  --color-border-active:    var(--border-active);
   --color-input:            var(--input);
   --color-ring:             var(--ring);
 
@@ -264,6 +265,7 @@
   /* Borders */
   --border:           var(--primitive-ls-300);
   --border-secondary: var(--primitive-ls-200);
+  --border-active:    var(--primitive-ls-500);
   --input:            var(--primitive-ls-300);
   --ring:             var(--primitive-blue-500);
 
@@ -342,6 +344,7 @@
   /* Borders */
   --border:           var(--primitive-ds-500);
   --border-secondary: var(--primitive-ds-600);
+  --border-active:    var(--primitive-ds-400);
   --input:            var(--primitive-ds-500);
   --ring:             var(--primitive-blue-500);
 

@@ -1,15 +1,33 @@
 import * as React from "react"
-import { Input as InputPrimitive } from "@base-ui/react/input"
-
 import { cn } from "@/lib/utils"
 
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
-    <InputPrimitive
+    <input
       type={type}
       data-slot="input"
       className={cn(
-        "h-8 w-full min-w-0 rounded-lg border border-input bg-transparent px-2.5 py-1 text-base transition-colors outline-none file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:bg-input/50 disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:disabled:bg-input/80 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+        // Layout
+        "flex h-11 w-full min-w-0",
+        // Shape & Surface — matches Figma: surface-secondary bg, border-primary border, 4px radius
+        "rounded-sm border border-border bg-card",
+        // Spacing — Figma: px-16 py-12
+        "px-4 py-3",
+        // Typography
+        "text-sm font-normal text-foreground",
+        "placeholder:text-muted-foreground",
+        // Transitions
+        "transition-colors duration-150 outline-none",
+        // Hover — border-primary-active
+        "hover:border-border-active",
+        // Focus — border-primary-active, no ring (clean Figma style)
+        "focus-visible:border-border-active",
+        // Disabled — 30% opacity per design rules
+        "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-30",
+        // Error
+        "aria-invalid:border-destructive",
+        // File input
+        "file:inline-flex file:h-6 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground",
         className
       )}
       {...props}

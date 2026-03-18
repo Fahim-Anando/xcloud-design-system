@@ -9,7 +9,7 @@ import {
   Check, Copy, Bold, Italic, Underline, AlignLeft, AlignCenter, AlignRight,
   ChevronRight, Download, Upload, Filter,
   Share2, ExternalLink, Info, XCircle, Database,
-  ArrowLeft,
+  ArrowLeft, Search,
 } from "lucide-react"
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -51,6 +51,7 @@ import {
 import { Empty, EmptyHeader, EmptyTitle, EmptyDescription, EmptyContent } from "@/components/ui/empty"
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
 import { Input } from "@/components/ui/input"
+import { InputField } from "@/components/xcloud/input-field"
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp"
 import { Kbd } from "@/components/ui/kbd"
 import { Label } from "@/components/ui/label"
@@ -343,23 +344,59 @@ export default function ComponentPage() {
           {/* ── INPUT / TEXTAREA ── */}
           {(slug === "input" || slug === "textarea") && (
             <Section title="Input">
-              <div className="grid max-w-xl gap-4">
-                <div className="grid gap-1.5">
-                  <Label htmlFor="domain">Domain name</Label>
-                  <Input id="domain" placeholder="my-site.com" />
+              <div className="grid max-w-xl gap-6">
+                {/* States */}
+                <div className="space-y-1.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">States</p>
+                  <div className="grid gap-4">
+                    <InputField label="Default" placeholder="Search servers…" />
+                    <InputField label="With left icon" placeholder="Search servers…" iconLeft={<Search className="size-4" />} />
+                    <InputField label="With right icon" placeholder="Search servers…" iconRight={<Server className="size-4" />} />
+                  </div>
                 </div>
-                <div className="grid gap-1.5">
-                  <Label htmlFor="disabled">Server name (disabled)</Label>
-                  <Input id="disabled" placeholder="my-server" disabled />
+
+                {/* Label variants */}
+                <div className="space-y-1.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Label Variants</p>
+                  <div className="grid gap-4">
+                    <InputField label="Domain name" placeholder="my-site.com" />
+                    <InputField label="Notes" optional placeholder="Add optional notes…" />
+                    <InputField label="Email address" required placeholder="name@example.com" />
+                  </div>
                 </div>
-                <div className="grid gap-1.5">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" placeholder="name@example.com" aria-invalid />
-                  <p className="text-xs text-destructive">Please enter a valid email address.</p>
+
+                {/* Helper & Error */}
+                <div className="space-y-1.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Helper & Error</p>
+                  <div className="grid gap-4">
+                    <InputField
+                      label="API Key"
+                      helperText="This text is a hint for user"
+                      helperIcon={<Info className="size-3.5" />}
+                      placeholder="sk-..."
+                    />
+                    <InputField
+                      label="Email address"
+                      required
+                      error="Please enter a valid email address."
+                      defaultValue="invalid@"
+                    />
+                  </div>
                 </div>
-                <div className="grid gap-1.5">
-                  <Label htmlFor="note">Notes</Label>
-                  <Textarea id="note" placeholder="Add server notes here…" rows={3} />
+
+                {/* Disabled */}
+                <div className="space-y-1.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Disabled</p>
+                  <InputField label="Server name" placeholder="my-server" disabled />
+                </div>
+
+                {/* Textarea */}
+                <div className="space-y-1.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Textarea</p>
+                  <div className="grid gap-1.5">
+                    <Label htmlFor="note">Notes</Label>
+                    <Textarea id="note" placeholder="Add server notes here…" rows={3} />
+                  </div>
                 </div>
               </div>
             </Section>

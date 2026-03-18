@@ -50,3 +50,10 @@ These rules apply to every task in this project. Never override them.
 - Secondary actions use `bg-secondary`
 - Tertiary/utility actions use `bg-muted` or `bg-ghost`
 - This ensures clear visual hierarchy and prevents action confusion
+
+## Color Usage
+- **Only use colors from the design system token map** — never hardcode hex values in components
+- All colors must reference CSS variables: `bg-primary`, `text-foreground`, `border-border`, etc.
+- Token source: `src/app/globals.css` — primitives → semantic → Tailwind bridge
+- When adding new colors, add them to globals.css first, then use via `@theme inline {}` bridge
+- This rule applies to ALL components: ui/, xcloud/, pages, and token-inspector

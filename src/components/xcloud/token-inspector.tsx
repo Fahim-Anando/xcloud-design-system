@@ -261,6 +261,142 @@ function inspectElement(el: Element): InspectorData {
   return { componentName, tagName: tag, colors, typography, spacing }
 }
 
+// ── State token reference — shows per-state token values by component type ──
+type StateTokenEntry = { state: string; tokens: { property: string; token: string; note?: string }[] }
+
+const STATE_TOKENS: Record<string, StateTokenEntry[]> = {
+  input: [
+    {
+      state: "Default",
+      tokens: [
+        { property: "Background", token: "--card", note: "surface-secondary" },
+        { property: "Border", token: "--border", note: "border-primary" },
+        { property: "Placeholder", token: "--muted-foreground" },
+        { property: "Text (filled)", token: "--foreground" },
+      ],
+    },
+    {
+      state: "Hover",
+      tokens: [
+        { property: "Border", token: "--border-active", note: "border-primary-active" },
+      ],
+    },
+    {
+      state: "Focus",
+      tokens: [
+        { property: "Border", token: "--border-active", note: "border-primary-active" },
+        { property: "Text", token: "--foreground" },
+      ],
+    },
+    {
+      state: "Error",
+      tokens: [
+        { property: "Border", token: "--destructive" },
+        { property: "Helper text", token: "--destructive" },
+      ],
+    },
+    {
+      state: "Disabled",
+      tokens: [
+        { property: "Opacity", token: "30%", note: "disabled:opacity-30" },
+      ],
+    },
+  ],
+  button: [
+    {
+      state: "Default",
+      tokens: [
+        { property: "Background", token: "--primary" },
+        { property: "Text", token: "--primary-foreground" },
+        { property: "Border Radius", token: "--radius-component (4px)" },
+      ],
+    },
+    {
+      state: "Hover",
+      tokens: [
+        { property: "Background", token: "--primary-hover", note: "light: #1169DB · dark: #0E57B6" },
+      ],
+    },
+    {
+      state: "Active / Pressed",
+      tokens: [
+        { property: "Background", token: "--primary-hover" },
+        { property: "Scale", token: "0.97 (Framer Motion)" },
+      ],
+    },
+    {
+      state: "Disabled",
+      tokens: [
+        { property: "Opacity", token: "30%", note: "disabled:opacity-30" },
+      ],
+    },
+  ],
+  select: [
+    {
+      state: "Default",
+      tokens: [
+        { property: "Background", token: "--card" },
+        { property: "Border", token: "--border" },
+        { property: "Chevron icon", token: "--icon-tertiary" },
+      ],
+    },
+    {
+      state: "Open / Focus",
+      tokens: [
+        { property: "Border", token: "--border-active" },
+        { property: "Dropdown bg", token: "--popover" },
+      ],
+    },
+    {
+      state: "Selected item",
+      tokens: [
+        { property: "Indicator", token: "--primary" },
+      ],
+    },
+  ],
+  badge: [
+    {
+      state: "Default",
+      tokens: [
+        { property: "Background", token: "--primary (solid) / --surface-info (soft)" },
+        { property: "Text", token: "--primary-foreground / --text-info" },
+        { property: "Border Radius", token: "--radius-component (4px)" },
+      ],
+    },
+    {
+      state: "Success",
+      tokens: [
+        { property: "Background", token: "--surface-success" },
+        { property: "Text", token: "--text-success" },
+      ],
+    },
+    {
+      state: "Warning",
+      tokens: [
+        { property: "Background", token: "--surface-warning" },
+        { property: "Text", token: "--text-warning" },
+      ],
+    },
+    {
+      state: "Destructive",
+      tokens: [
+        { property: "Background", token: "--surface-error" },
+        { property: "Text", token: "--text-error" },
+      ],
+    },
+  ],
+}
+
+function getStateTokens(tagName: string, dataSlot?: string): StateTokenEntry[] | null {
+  const slot = dataSlot?.toLowerCase() || ""
+  const tag = tagName.toLowerCase()
+  if (tag === "input" || slot === "input") return STATE_TOKENS.input
+  if (tag === "button" || slot === "button") return STATE_TOKENS.button
+  if (slot === "select" || slot === "select-trigger") return STATE_TOKENS.select
+  if (slot === "badge") return STATE_TOKENS.badge
+  return null
+}
+
 // ── TokenInspector panel ─────────────────────────────────────
 interface TokenInspectorProps {
   data: InspectorData | null
@@ -356,7 +492,7 @@ export function TokenInspectorPanel({ data, open, onClose }: TokenInspectorProps
           </section>
 
           {/* Spacing & Shape */}
-          <section className="px-4 py-3">
+          <section className="border-b border-border px-4 py-3">
             <div className="mb-2 flex items-center gap-1.5">
               <BoxSelect className="size-3.5 text-muted-foreground" />
               <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">Spacing & Shape</p>
@@ -370,6 +506,39 @@ export function TokenInspectorPanel({ data, open, onClose }: TokenInspectorProps
               ))}
             </div>
           </section>
+
+          {/* State tokens */}
+          {(() => {
+            const slot = data.tagName === "button" ? "button" : data.tagName === "input" ? "input" : undefined
+            const stateEntries = getStateTokens(data.tagName, slot)
+            if (!stateEntries) return null
+            return (
+              <section className="px-4 py-3 border-t border-border">
+                <div className="mb-2 flex items-center gap-1.5">
+                  <Layers className="size-3.5 text-muted-foreground" />
+                  <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground">State Tokens</p>
+                </div>
+                <div className="space-y-3">
+                  {stateEntries.map((entry) => (
+                    <div key={entry.state}>
+                      <p className="mb-1 text-[10px] font-semibold uppercase tracking-widest text-primary/70">{entry.state}</p>
+                      <div className="space-y-1">
+                        {entry.tokens.map((t) => (
+                          <div key={t.property} className="flex items-start justify-between gap-2">
+                            <span className="text-xs text-muted-foreground">{t.property}</span>
+                            <div className="text-right">
+                              <span className="font-mono text-[10px] text-foreground">{t.token}</span>
+                              {t.note && <p className="text-[9px] text-muted-foreground/60">{t.note}</p>}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )
+          })()}
         </div>
       ) : (
         <div className="flex flex-1 flex-col items-center justify-center gap-2 px-4 text-center">
