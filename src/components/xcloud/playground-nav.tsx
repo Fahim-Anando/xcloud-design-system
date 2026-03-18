@@ -120,12 +120,12 @@ export function PlaygroundNav(props: PlaygroundNavProps) {
             </button>
           )}
 
-          {/* Sub-menu */}
+          {/* Sub-menu with fixed height */}
           {showComponentsSubMenu && (
-            <div className="mt-1 space-y-3 pb-1 pl-2">
+            <div className="mt-1 max-h-80 overflow-y-auto space-y-3 pb-1 pl-2 rounded-sm border border-border/50 bg-muted/30">
               {GROUPS.map(group => (
                 <div key={group}>
-                  <p className="px-2 pb-1 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/50">
+                  <p className="sticky top-0 bg-muted/30 px-2 pb-1 pt-2 text-[9px] font-semibold uppercase tracking-widest text-muted-foreground/50">
                     {group}
                   </p>
                   {COMPONENT_CATEGORIES.filter(c => c.group === group).map(cat => (
