@@ -21,7 +21,18 @@ const SIZES = [16, 24, 32, 48, 64, 128] as const
 type IconSize = (typeof SIZES)[number]
 type IconFormat = "svg" | "png"
 
-// ── SVG icon rendered via CSS mask (inherits --icon-primary color) ──────────
+// Icon color tokens (semantic colors from design system)
+const ICON_COLORS = [
+  { name: "Primary", value: "var(--icon-primary)" },
+  { name: "Secondary", value: "var(--icon-secondary)" },
+  { name: "Tertiary", value: "var(--icon-tertiary)" },
+  { name: "Destructive", value: "var(--destructive)" },
+  { name: "Success", value: "var(--success)" },
+  { name: "Warning", value: "var(--warning)" },
+  { name: "Info", value: "var(--text-info)" },
+] as const
+
+// ── SVG icon rendered via CSS mask ──────────────────────────────────────────
 
 function SvgIcon({ url, size = 32, color, className }: { url: string; size?: number; color?: string; className?: string }) {
   return (
@@ -56,9 +67,11 @@ function DownloadModal({
 }) {
   const [size, setSize] = useState<IconSize>(24)
   const [format, setFormat] = useState<IconFormat>("svg")
-  const [color, setColor] = useState("#E4E7EB")
+  const [colorIndex, setColorIndex] = useState(0)
   const [downloading, setDownloading] = useState(false)
   const [copying, setCopying] = useState(false)
+
+  const selectedColor = ICON_COLORS[colorIndex]
 
   // Close on Escape key
   useEffect(() => {
@@ -122,25 +135,27 @@ function DownloadModal({
         <div className="p-5 space-y-5">
           {/* Preview */}
           <div className="flex items-center justify-center rounded-lg bg-muted/40 py-8">
-            <SvgIcon url={icon.url} size={Math.min(size, 64)} color={color} />
+            <SvgIcon url={icon.url} size={Math.min(size, 64)} color={selectedColor.value} />
           </div>
 
-          {/* Color */}
+          {/* Color Tokens */}
           <div className="space-y-2">
             <p className="text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">Color</p>
-            <div className="flex items-center gap-2">
-              <input
-                type="color"
-                value={color}
-                onChange={(e) => setColor(e.target.value)}
-                className="h-10 w-16 rounded-md border border-border cursor-pointer"
-              />
-              <input
-                type="text"
-                value={color}
-                onChange={(e) => setColor(e.target.value)}
-                className="flex-1 h-10 rounded-md border border-border bg-muted px-2 text-xs font-mono text-foreground"
-              />
+            <div className="flex flex-wrap gap-1.5">
+              {ICON_COLORS.map((color, idx) => (
+                <button
+                  key={color.name}
+                  onClick={() => setColorIndex(idx)}
+                  className={cn(
+                    "px-2.5 py-1.5 rounded-md text-xs font-medium transition-colors",
+                    colorIndex === idx
+                      ? "bg-primary text-white"
+                      : "bg-muted text-muted-foreground hover:bg-muted/70 hover:text-foreground"
+                  )}
+                >
+                  {color.name}
+                </button>
+              ))}
             </div>
           </div>
 
